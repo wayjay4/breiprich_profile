@@ -1,0 +1,537 @@
+/* site page--------------------------------*/
+
+h1 {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 28px;
+	font-style: italic;
+	font-weight: bold;
+  text-align: left;
+	text-shadow: 1px 1px 2px #000000;
+	color: #FFE4C4;
+  border-bottom: 1px ridge #FFE4C4;
+	box-shadow: 0px 1px 0px #000000;
+	padding-bottom: 8px;
+  margin-left: -15px;
+  margin-bottom: 15px;
+  margin-top: 60px;
+}
+
+h2 {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: normal;
+  text-align: left;
+	text-shadow: 1px 1px 2px #000000;
+	color: #FFE4C4;
+	padding-bottom: 8px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  margin-top: 30px;
+}
+
+h1:first-child, h2:first-child {
+  margin-top: 0px;
+}
+
+a.textlink:link {
+	color: #DAA520;
+	text-decoration: underline;
+}
+a.textlink:visited {
+	color: #DAA520;
+	text-decoration: underline;
+}
+a.textlink:hover {
+	color: #DAA520;
+	text-decoration: underline;
+}
+a.textlink:active {
+	color: #DAA520;
+	text-decoration: underline;
+}
+
+.main_content  {
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	border: 1px solid #006600;
+	height: 450px;
+	width: 850px;
+	overflow: hidden;
+	position: relative;
+	visibility: visible;
+	margin-left:auto;
+	margin-right:auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* home page--------------------------------*/
+
+#home_content {
+	background-image: url(../images/gathered_photos/brucer_background.jpg);
+}
+
+#home_flashplayer {
+  background-image: url(../images/gathered_photos/brucer.jpg);
+  background-repeat: no-repeat;
+  background-position: right top;
+	height: inherit;
+	width: inherit;
+	overflow: visible;
+	position: absolute;
+	visibility: visible;
+	top: 0px;
+	left: 0px;
+}
+
+/* biography page---------------------------*/
+
+#bio_content {
+	background-image: url(../images/gathered_photos/IMG_0488.jpg);
+  height: 576px;
+}
+
+#bio_textArea {
+  background: rgba(0,0,0,0.4);
+	height: inherit;
+	width: 100%;
+	overflow: visible;
+	position: relative;
+	visibility: visible;
+  bottom: 0px;
+  margin-left:auto;
+  margin-right:auto;
+	padding: 10px 5px;
+}
+
+#bio_textBox {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	color: white;
+	height: 96%;
+	width: 30%;
+	padding: 10px 25px;
+	overflow: hidden;
+	position: absolute;
+	visibility: visible;
+	left: 1px;
+	top: 10px;
+}
+
+#bio_dataBox {
+	height: 96%;
+	width: 70%;
+	padding: 10px 5px;
+  padding-right: 25px;
+	overflow: auto;
+	position: absolute;
+	visibility: visible;
+	top: 0px;
+	right: 20px;
+  padding-left: 15px;
+}
+
+#bio_textBox a.active {
+  background: #A0522D;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+#bio_dataBox p {
+  text-align: justify;
+  text-justify: inter-word;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+#bio_dataBox h1 {
+  /* enter mods here*/
+}
+
+div.bioItem {
+  min-height:215px;
+  padding-bottom: 15px;
+}
+
+/* recording page---------------------------*/
+
+#rec_content {
+	background-image: url(../images/gathered_photos/08.jpg);
+  height: 576px;
+}
+
+#rec_textArea {
+  background: rgba(0,0,0,0.4);
+	height: inherit;
+	width: 100%;
+	overflow: visible;
+	position: relative;
+	visibility: visible;
+  bottom: 0px;
+  margin-left:auto;
+  margin-right:auto;
+	padding: 10px 5px;
+}
+
+#rec_textBox {
+	font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+  color: white;
+	height: 96%;
+	width: 35%;
+	padding: 10px 25px;
+	overflow: hidden;
+	position: absolute;
+	visibility: visible;
+	left: 1px;
+	top: 10px;
+}
+
+#rec_dataBox {
+	height: 96%;
+	width: 65%;
+	padding: 10px 5px;
+	overflow: auto;
+	position: absolute;
+	visibility: visible;
+	top: 0px;
+	right: 20px;
+  padding-right: 15px;
+}
+
+#rec_textBox a.active {
+  background: #4682B4;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+#rec_dataBox ul li {
+  text-shadow: 1px 1px 2px #000000;
+}
+
+div.cdItem {
+  min-height:215px;
+  border-bottom: 1px ridge #FFE4C4;
+  box-shadow: 0px 1px 0px #000000;
+  padding-bottom: 15px;
+}
+
+img.cdcover {
+	border: 1px dashed #000000;
+  margin-left: 15px;
+  float: right;
+  min-height: 200px;
+  min-width: 200px;
+}
+
+span.text3 {
+	color: #DEB887;
+	font-style: normal;
+	font-weight: normal;
+}
+
+/* compositions page------------------------*/
+
+#comp_content {
+	background-image: url(../images/gathered_photos/01_1-no_text.jpg);
+	height: 576px;
+}
+
+#comp_textArea {
+  background: rgba(0,0,0,0.4);
+	height: inherit;
+	width: 100%;
+	overflow: visible;
+	position: relative;
+	visibility: visible;
+	bottom: 0px;
+  margin-left:auto;
+  margin-right:auto;
+  padding: 10px 5px;
+}
+
+#comp_textBox {
+	font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+  color: white;
+	height: 96%;
+	width: 40%;
+	padding: 10px 25px;
+	overflow: hidden;
+	position: absolute;
+	visibility: visible;
+	left: 1px;
+	top: 10px;
+}
+
+#comp_dataBox {
+	height: 96%;
+	width: 50%;
+	padding: 10px 5px;
+	overflow: auto;
+	position: absolute;
+	visibility: visible;
+	top: 0px;
+	right: 20px;
+  padding-right: 15px;
+}
+
+#comp_dataBox h2 {
+  font-size: 16px;
+}
+
+#comp_textBox p {
+  text-align: left;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+#comp_textBox a.active {
+  background: #228B22;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.comp_itemDetail {
+  border-bottom: 1px ridge #FFE4C4;
+  box-shadow: 0px 1px 0px #000000;
+  padding-bottom: 5px;
+  margin-bottom: 25px;
+}
+
+.comp_itemDetail p {
+  margin-left: 20px;
+}
+
+
+span.intruments, span.total_movements, span.total_time {
+
+}
+
+.textsmall {
+	font-style: normal;
+	font-weight: normal;
+  margin-left: 20px;
+}
+
+/* audio page-------------------------------*/
+
+#audio_content {
+	background-image: url(../images/gathered_photos/09.jpg);
+	height: 576px;
+}
+
+#audio_textArea {
+	/*background-image: url(../images/gathered_photos/08_text.jpg);*/
+  /*background-image: url(../images/backdrop_transparent_white.png);
+	background-repeat: no-repeat;
+	background-position: left bottom;*/
+  background: rgba(0,0,0,0.4);
+	height: inherit;
+	width: 100%;
+	overflow: visible;
+	position: relative;
+	visibility: visible;
+	bottom: 0px;
+  margin-left:auto;
+  margin-right:auto;
+	padding: 10px 5px;
+}
+
+#audio_textBox {
+	font-family: Helvetica, Arial, sans-serif;;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	color: white;
+  height: 90%;
+	width: 90%;
+	overflow: auto;
+	position: absolute;
+	visibility: visible;
+	bottom: 0px;
+  left: 0px;
+  /*border-top: 1px solid #003300;
+  border-right: 1px solid #003300;*/
+	padding: 10px 15px;
+  margin: 4% 4%;
+}
+
+a.audio:link {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+a.audio:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+a.audio:hover {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+a.audio:active {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+table {
+	font-family: Helvetica, Arial, sans-serif;
+  border: none;
+}
+
+td {
+  padding: 5px;
+	border: none;
+	border-collapse: collapse;
+	color: white;
+}
+
+th {
+  /*background-color: #7F9FC5;*/
+  padding: 5px;
+	border: none;
+	border-collapse: collapse;
+}
+
+tbody {
+  height: 100%;
+  overflow: auto;
+}
+
+.dark {
+	/*background-color: #98AECB;*/
+}
+
+.light {
+	/*background-color: #282A30;*/
+}
+
+/* reviews page-----------------------------*/
+
+#rev_content {
+	background-image: url(../images/brins_mesa2_edit.png);
+	height: 576px;
+}
+
+#rev_textArea {
+  background: rgba(0,0,0,0.4);
+	height: inherit;
+	width: 100%;
+	overflow: visible;
+	position: relative;
+	visibility: visible;
+	bottom: 0px;
+  margin-left:auto;
+  margin-right:auto;
+	padding: 10px 5px;
+}
+
+#rev_textBox {
+  font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: normal;
+	color: white;
+	height: 96%;
+	width: 98%;
+	overflow: auto;
+	position: absolute;
+	visibility: visible;
+	bottom: 0px;
+	left: 0px;
+  padding: 10px 25px;
+  margin-left: 2%;
+  margin-right: 0%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+#rev_textBox h1 {
+  font-size: 20px;
+  color: #DAA520;
+}
+#rev_textBox p {
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.reviewcomment {
+	margin-left:2px;
+	margin-bottom:10px;
+}
+
+.revieweditor {
+	margin-left:50px;
+	margin-bottom:20px;
+  color: #FFE4C4;
+}
+
+/* contact page-----------------------------*/
+
+#contact_content {
+	background-image: url(../images/gathered_photos/03.jpg);
+  height: 576px;
+}
+
+#contact_textArea {
+	/*background-image: url(../images/gathered_photos/06_text.jpg);*/
+	/*background-image: url(../images/backdrop_transparent_white.png);
+	background-repeat: no-repeat;
+	background-position: left bottom;*/
+  background: rgba(0,0,0,0.4);
+	height: inherit;
+	width: 100%;
+	overflow: visible;
+	position: relative;
+	visibility: visible;
+	bottom: 0px;
+  margin-left:auto;
+  margin-right:auto;
+	padding: 10px 5px;
+}
+
+#contact_textBox {
+  font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: normal;
+	color: white;
+	height: 90%;
+	width: 90%;
+	overflow: auto;
+	position: absolute;
+	visibility: visible;
+	bottom: 0px;
+	left: 0px;
+	padding: 10px 25px;
+  margin: 4% 4%;
+}
+
+#contact_textBox p {
+  text-shadow: 1px 1px 2px #000000;
+}
+
+a.textcontact:link {
+	color: #1E90FF;
+	text-decoration: underline;
+}
+a.textcontact:visited {
+	color: #1E90FF;
+	text-decoration: underline;
+}
+a.textcontact:hover {
+	color: #1E90FF;
+	text-decoration: underline;
+}
+a.textcontact:active {
+	color: #1E90FF;
+	text-decoration: underline;
+}
