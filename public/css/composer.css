@@ -352,6 +352,10 @@ span.audio_details
 	margin-left: 10px;
 }
 
+.div_trackData {
+	margin-top: 10px;
+}
+
 a.audio_track,
 span.audio_details {
 	font-size: .9em;

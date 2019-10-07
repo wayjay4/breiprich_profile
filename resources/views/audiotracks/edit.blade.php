@@ -26,29 +26,8 @@
       $("#compEditForm").submit();
     });
 
-
-
-
-    if(false){
-      var myDiv2Para = $("#div_audioplayer").detach();
-      myDiv2Para.appendTo('#comp_media_player');
-
-      var media = $("#audio_player")[0];
-      // pull src file name from media player and replace '_' with spaces and set to track_name
-      $("#div_audioplayer").attr("hidden", false);
-      media.hidden = false;
-
-
-      // pull src file name from media player and replace '_' with spaces and set to track_name
-      var track_name = media.currentSrc.split('\\').pop().split('/').pop().replace(/\_/g," ");
-
-      // show media player
-      $("#div_audioplayer").attr("hidden", false);
-      media.hidden = false;
-
-      // place track_name in html for display and capitalize first letters
-      $("#track_name").html(track_name);
-    }
+    var myDiv2Para = $("#div_audioplayer").detach();
+    myDiv2Para.appendTo('#comp_media_player');
   });
 </script>
 
@@ -78,14 +57,24 @@
     <div class="form-group row">
       <label for="formGroupExampleInput2" class="col-sm-2 col-form-label">audio file</label>
       <div class="col-sm-10">
-        @if($track->file_url != null)
-          <div style="margin:25px; padding:15px;">
-            <div id="comp_media_player" align="center" style="margin:25px; padding:25px;">
+        <div>
+          <input type="file" name="fileToUpload" id="fileToUpload" />
+        </div>
+
+        <div style="padding:15px; margin:15px; border-radius:25px; border: 1px solid yellow;">
+          @if($track->file_name != null)
+            <div class="play_me">
+              <a class="audio_track" href="{{asset('storage/music/comp_tracks/'.$track->file_name)}}">
+                <i class="material-icons" href="{{asset('storage/music/comp_tracks/'.$track->file_name)}}" style="position:relative; font-size:50px;">play_circle_outline</i>
+                <span style="position:relative; top:-18px;">{{ strtolower(basename($track->file_name)) }}</span>
+              </a>
             </div>
+          @else
+            <span><i>Please select an audio track to upload. (Required) </i></span>
+          @endif
+
+          <div id="comp_media_player" align="center" style="position: relative;">
           </div>
-        @endif
-        <div style="margin:15px; padding:5px;">
-          <input class="btn btn-outline-primary" type="file" name="fileToUpload" id="fileToUpload" />
         </div>
       </div>
     </div>
@@ -93,11 +82,17 @@
     <div class="form-group row">
       <label for="formGroupExampleInput3" class="col-sm-2 col-form-label">image file</label>
       <div class="col-sm-10">
-        @if($track->image_url != null && $track->image_url != "noimage.jpg")
-          <img src="{{asset('storage/images/comp_tracks/' . $track->image_url)}}" alt="{{$track->image_url}}" width="100" height="150">
-        @endif
-        <div style="margin:15px; padding:5px;">
-          <input class="btn btn-outline-primary" type="file" name="imageToUpload" id="imageToUpload" />
+        <div>
+          <input type="file" name="imageToUpload" id="imageToUpload" />
+        </div>
+
+        <div style="padding:15px; margin:15px; border-radius:25px; border: 1px solid yellow;">
+          @if($track->image_name != null && $track->image_name != "blank_image.png")
+            <img src="{{asset('storage/images/comp_tracks/'.$track->image_name)}}" alt="{{$track->image_name}}" width="125" height="125">
+          @else
+            <img src="{{asset('storage/images/comp_tracks/'.'blank_image.png')}}" alt="blank_image.png" width="125" height="125">
+            <div style=" position: absolute; top:75px; left:75px; color: black;">No Image</div>
+          @endif
         </div>
       </div>
     </div>

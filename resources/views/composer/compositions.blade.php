@@ -88,10 +88,10 @@
                                 <div class="col-md-12">
                                   <div class="play_me">
                                     @foreach($comp['audio_files'] as $audio_file)
-                                      <div>
+                                      <div class="div_trackData">
                                         <a class="audio_track" href="{{ $audio_file }}">
-                                          <i class="material-icons" href="{{ $audio_file }}" style="position:relative; top:18px; font-size:50px;">play_circle_outline</i>
-                                          {{ strtolower(basename($audio_file)) }}
+                                          <i class="material-icons" href="{{ $audio_file }}" style="position:relative; font-size:50px;">play_circle_outline</i>
+                                          <span style="position:relative; top:-18px;">{{ strtolower(basename($audio_file)) }}</span>
                                         </a>
                                       </div>
                                     @endforeach

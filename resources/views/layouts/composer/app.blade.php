@@ -68,7 +68,7 @@
         event.preventDefault();
 
         // set media's music file source, unmute, load, and play it
-        playMediaFile($(event.target).attr("href"));
+        playMediaFile($(event.currentTarget).attr("href"));
       });
 
       $("#comp_dataBox").scroll(function(){
@@ -161,7 +161,7 @@
     <footer class="mastfoot mt-auto">
       <div id="div_audioplayer" hidden>
         <audio id="audio_player" controls loop preload hidden style="display:inline-block; margin:15px; height:30px;">
-          <source id="audio_source" src="../music/xchamber/old_pond.mp3" type="audio/mpeg">
+          <source id="audio_source" src="{{asset('music/xchamber/'.'old_pond.mp3')}}" type="audio/mpeg">
           Error: your web browser does not support this audio player.
         </audio>
         <div id="div_track">

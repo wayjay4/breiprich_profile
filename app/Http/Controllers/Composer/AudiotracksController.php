@@ -81,13 +81,13 @@ class AudiotracksController extends Controller
         Storage::putFileAs('public/images/comp_tracks', $request->imageToUpload, $imageNameToStore);
       }
       else{
-        $imageNameToStore = 'noimage.jpg';
+        $imageNameToStore = 'blank_image.png';
       }
 
       $track = new AudioTrack;
       $track->name = $request->input('name');
-      $track->file_url = $fileNameToStore;
-      $track->image_url = $imageNameToStore;
+      $track->file_name = $fileNameToStore;
+      $track->image_name = $imageNameToStore;
       $track->composition_id = $compID;
       $track->save();
 
@@ -157,10 +157,10 @@ class AudiotracksController extends Controller
         // upload the file
         Storage::putFileAs('public/music/comp_tracks', $request->fileToUpload, $fileNameToStore);
         // delete old file
-        Storage::delete('public/music/comp_tracks/'.$track->file_url);
+        Storage::delete('public/music/comp_tracks/'.$track->file_name);
       }
       else{
-        $fileNameToStore = $track->file_url;
+        $fileNameToStore = $track->file_name;
       }
 
       // handle image upload
@@ -174,15 +174,15 @@ class AudiotracksController extends Controller
         // upload the image
         Storage::putFileAs('public/images/comp_tracks', $request->imageToUpload, $imageNameToStore);
         // delete old image
-        Storage::delete('public/images/comp_tracks/'.$track->image_url);
+        Storage::delete('public/images/comp_tracks/'.$track->image_name);
       }
       else{
-        $imageNameToStore = $track->image_url;
+        $imageNameToStore = $track->image_name;
       }
 
       $track->name = $request->input('name');
-      $track->file_url = $fileNameToStore;
-      $track->image_url = $imageNameToStore;
+      $track->file_name = $fileNameToStore;
+      $track->image_name = $imageNameToStore;
       $track->save();
 
       //return response()->download(storage_path('app/public/images/audio_tracks/' . $fileNameToStore));
@@ -203,8 +203,9 @@ class AudiotracksController extends Controller
       AudioDetail::where('audio_track_id', $trackID)->delete();
 
       $track = AudioTrack::find($trackID);
-      Storage::delete('public/music/comp_tracks/'.$track->file_url);
-      Storage::delete('public/images/comp_tracks/'.$track->image_url);
+      Storage::delete('public/music/comp_tracks/'.$track->file_name);
+      if($track->image_name != 'blank_image.png')
+        Storage::delete('public/images/comp_tracks/'.$track->image_name);
       $track->delete();
 
       return redirect(route('comps.show', ['compID'=>$compID]))->with([

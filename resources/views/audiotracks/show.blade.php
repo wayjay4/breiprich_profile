@@ -9,7 +9,7 @@
   <div>
     <ul>
       <li><strong>track_name:</strong> {{$track->name}}</li>
-      <li><strong>file_url:</strong> {{$track->file_url}}</li>
+      <li><strong>file_name:</strong> {{$track->file_name}}</li>
       <li><strong>track_details:</strong>
         @if(count($track->audio_details) > 0)
           <ul>

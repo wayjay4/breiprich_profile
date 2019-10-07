@@ -16,8 +16,8 @@ class CreateAudioTracksTable extends Migration
         Schema::create('audio_tracks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('file_url');
-            $table->string('image_url')->nullable();
+            $table->string('file_name');
+            $table->string('image_name')->nullable();
             $table->integer('composition_id');
             $table->timestamps();
         });
