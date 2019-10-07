@@ -54,7 +54,8 @@ a.textlink:active {
 .main_content  {
 	background-repeat: no-repeat;
 	background-position: 0px 0px;
-	border: 1px solid #006600;
+	border: 1px solid #696969;
+	box-shadow: 0px 0px 30px #000000;
 	height: 450px;
 	width: 850px;
 	overflow: hidden;
@@ -104,6 +105,7 @@ a.textlink:active {
   margin-left:auto;
   margin-right:auto;
 	padding: 10px 5px;
+	padding-top: 25px;
 }
 
 #bio_textBox {
@@ -114,7 +116,10 @@ a.textlink:active {
 	color: white;
 	height: 96%;
 	width: 30%;
-	padding: 10px 25px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
 	overflow: hidden;
 	position: absolute;
 	visibility: visible;
@@ -125,13 +130,16 @@ a.textlink:active {
 #bio_dataBox {
 	height: 96%;
 	width: 70%;
-	padding: 10px 5px;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  padding-left: 5px;
   padding-right: 25px;
-	overflow: auto;
-	position: absolute;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	position: relative;
 	visibility: visible;
-	top: 0px;
-	right: 20px;
+	float: right;
   padding-left: 15px;
 }
 
@@ -184,7 +192,10 @@ div.bioItem {
   color: white;
 	height: 96%;
 	width: 35%;
-	padding: 10px 25px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
 	overflow: hidden;
 	position: absolute;
 	visibility: visible;
@@ -195,8 +206,12 @@ div.bioItem {
 #rec_dataBox {
 	height: 96%;
 	width: 65%;
-	padding: 10px 5px;
-	overflow: auto;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 25px;
+	overflow-y: scroll;
+	overflow-x: hidden;
 	position: absolute;
 	visibility: visible;
 	top: 0px;
@@ -253,6 +268,7 @@ span.text3 {
   margin-left:auto;
   margin-right:auto;
   padding: 10px 5px;
+	padding-top: 25px;
 }
 
 #comp_textBox {
@@ -263,7 +279,10 @@ span.text3 {
   color: white;
 	height: 96%;
 	width: 40%;
-	padding: 10px 25px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
 	overflow: hidden;
 	position: absolute;
 	visibility: visible;
@@ -273,21 +292,25 @@ span.text3 {
 
 #comp_dataBox {
 	height: 96%;
-	width: 50%;
-	padding: 10px 5px;
-	overflow: auto;
-	position: absolute;
+	width: 60%;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 25px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	scroll-behavior: auto;
+	position: relative;
 	visibility: visible;
-	top: 0px;
-	right: 20px;
+	float:right;
   padding-right: 15px;
 }
 
-#comp_dataBox h2 {
-  font-size: 16px;
+#comp_textArea h2 {
+  font-size: 18px;
 }
 
-#comp_textBox p {
+#comp_textArea p, {
   text-align: left;
   text-shadow: 1px 1px 2px #000000;
 }
@@ -309,15 +332,55 @@ span.text3 {
   margin-left: 20px;
 }
 
+.comp_title {
+  color:#e3d6c9;
+  font-size:1.0em;
+  font-style: italic;
+}
 
-span.intruments, span.total_movements, span.total_time {
+span.intruments,
+span.versions,
+span.total_movements,
+span.total_time,
+a.audio_track,
+span.audio_details
+{
+  text-shadow: 1px 1px 2px #000000;
+}
 
+.div_jukeBox {
+	margin-left: 10px;
+}
+
+a.audio_track,
+span.audio_details {
+	font-size: .9em;
+}
+
+a.audio_track{
+	font-size: .97em;
+	margin-left: 10px;
+	color: #9acd32;
+	text-shadow: 1px 1px 6px black;
 }
 
 .textsmall {
 	font-style: normal;
 	font-weight: normal;
   margin-left: 20px;
+}
+
+#comp_media_player {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+div#comp_media_player span#track_name {
+	color: #9acd32;
+	background:rgba(65,105,225,0.5);
+	padding: 7px;
+	border-radius: 60px;
 }
 
 /* audio page-------------------------------*/
@@ -357,9 +420,10 @@ span.intruments, span.total_movements, span.total_time {
 	visibility: visible;
 	bottom: 0px;
   left: 0px;
-  /*border-top: 1px solid #003300;
-  border-right: 1px solid #003300;*/
-	padding: 10px 15px;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: 4% 4%;
 }
 
@@ -448,7 +512,10 @@ tbody {
 	visibility: visible;
 	bottom: 0px;
 	left: 0px;
-  padding: 10px 25px;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
   margin-left: 2%;
   margin-right: 0%;
   margin-top: 2%;
@@ -457,7 +524,7 @@ tbody {
 
 #rev_textBox h1 {
   font-size: 20px;
-  color: #DAA520;
+  color: #FFE4C4;
 }
 #rev_textBox p {
   text-shadow: 1px 1px 2px #000000;
@@ -471,7 +538,7 @@ tbody {
 .revieweditor {
 	margin-left:50px;
 	margin-bottom:20px;
-  color: #FFE4C4;
+  color: #e3d6c9;
 }
 
 /* contact page-----------------------------*/
@@ -511,7 +578,10 @@ tbody {
 	visibility: visible;
 	bottom: 0px;
 	left: 0px;
-	padding: 10px 25px;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: 4% 4%;
 }
 
@@ -520,18 +590,33 @@ tbody {
 }
 
 a.textcontact:link {
-	color: #1E90FF;
+	color: #DAA520;
 	text-decoration: underline;
 }
 a.textcontact:visited {
-	color: #1E90FF;
+	color: #DAA520;
 	text-decoration: underline;
 }
 a.textcontact:hover {
-	color: #1E90FF;
+	color: #DAA520;
 	text-decoration: underline;
 }
 a.textcontact:active {
-	color: #1E90FF;
+	color: #DAA520;
 	text-decoration: underline;
+}
+
+/* audioplayer------------------------------*/
+
+#div_audioplayer {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#div_audioplayer div#div_track {
+	color: white;
+	font-style: italic;
 }

@@ -11,32 +11,37 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+    //return view('welcome');
+//});
 
-Route::get('/music_home', function () {
-  return view('composer/music_home');
-});
-Route::get('/biography', function () {
-  return view('composer/biography');
-});
-Route::get('/recordings', function () {
-  return view('composer/recordings');
-});
-Route::get('/scores', function () {
-  return view('composer/compositions');
-});
-Route::get('/audio', function () {
-  return view('composer/audio');
-});
-Route::get('/reviews', function () {
-  return view('composer/reviews');
-});
-Route::get('/contact', function () {
-  return view('composer/contact');
-});
+Route::get('/', 'Composer\PagesController@home');
 
-Auth::routes();
+Route::get('/biography', 'Composer\PagesController@bio');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/recordings', 'Composer\PagesController@recordings');
+
+Route::get('/scores', 'Composer\PagesController@compositions');
+
+//Route::get('/audio', 'Composer\PagesController@audio');
+
+Route::get('/reviews', 'Composer\PagesController@reviews');
+
+Route::get('/contact', 'Composer\PagesController@contact');
+
+
+// Begin: dashboard routes
+
+Route::resource('comps', 'Composer\CompositionsController');
+
+Route::resource('comps/{comp}/atracks', 'Composer\AudiotracksController');
+
+Route::resource('atracks/{track}/adetails', 'Composer\AudiodetailsController')
+->except([
+  'index', 'show'
+]);
+
+
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');

@@ -1,14 +1,6 @@
 @extends('layouts.composer.app')
 
 @section('content')
-  <script language="javascript" type="text/javascript">
-    function popitup(url) {
-        newwindow=window.open(url,'name','height=100,width=400,left=200,top=250,screenX=200,screenY=200,menubar=no,scrollbars=yes,resizable=yes,status=no');
-        if (window.focus) {newwindow.focus()}
-        return false;
-    }
-  </script>
-
   <div class="main_content" id="audio_content">
     <div id="audio_textArea">
       <div id="audio_textBox">
