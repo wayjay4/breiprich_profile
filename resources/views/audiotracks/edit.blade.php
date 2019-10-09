@@ -1,38 +1,6 @@
 @extends('layouts.composer.app')
 
 @section('content')
-<script>
-  $(document).ready(function($){
-    $("#trackEditSubmitButton").on("click", function(event){
-      event.preventDefault();
-
-      $("#spinner").show();
-
-      // the view has a form containing inner forms that resets the outer form's input.attr(_method) to DELETE,
-      // this procedure changes them all to PUT so that the outer form works properly
-      $("input[name=_method]").each(function(key, target){
-        $(target)[0].value = "PUT";
-      });
-
-      $("#compEditForm").submit();
-    });
-
-    $(".detailItemDeleteButton").on("click", function(event){
-      event.preventDefault();
-
-      // for some reason the first item in the audio detailList is not catching it's parent form correclty
-      // when deleting a detailItem and it is catching the outer form instead,
-      // so we are capturing the attribute 'data.action' from the target element (applied to all items in detailList),
-      // then update the outer form's action with 'data.action' and submit the form instead
-      $("#compEditForm").attr("action", $(event.target).attr("data-action"));
-      $("#compEditForm").submit();
-    });
-
-    var myDiv2Para = $("#div_audioplayer").detach();
-    myDiv2Para.appendTo('#comp_media_player');
-  });
-</script>
-
 <div class="main_content" id="create_comp_content">
   @if($create)
     <h1>Create AudioTrack</h1>
@@ -137,4 +105,38 @@
     <input type="submit" value="Submit" class="btn btn-primary" id="trackEditSubmitButton" />
   </form>
 </div>
+@endsection
+
+@section('addtl_scripts')
+<script>
+  $(document).ready(function($){
+    $("#trackEditSubmitButton").on("click", function(event){
+      event.preventDefault();
+
+      $("#spinner").show();
+
+      // the view has a form containing inner forms that resets the outer form's input.attr(_method) to DELETE,
+      // this procedure changes them all to PUT so that the outer form works properly
+      $("input[name=_method]").each(function(key, target){
+        $(target)[0].value = "PUT";
+      });
+
+      $("#compEditForm").submit();
+    });
+
+    $(".detailItemDeleteButton").on("click", function(event){
+      event.preventDefault();
+
+      // for some reason the first item in the audio detailList is not catching it's parent form correclty
+      // when deleting a detailItem and it is catching the outer form instead,
+      // so we are capturing the attribute 'data.action' from the target element (applied to all items in detailList),
+      // then update the outer form's action with 'data.action' and submit the form instead
+      $("#compEditForm").attr("action", $(event.target).attr("data-action"));
+      $("#compEditForm").submit();
+    });
+
+    var myDiv2Para = $("#div_audioplayer").detach();
+    myDiv2Para.appendTo('#comp_media_player');
+  });
+</script>
 @endsection

@@ -1,13 +1,6 @@
 @extends('layouts.composer.app')
 
 @section('content')
-<script>
-  $(document).ready(function($){
-    var myDiv2Para = $("#div_audioplayer").detach();
-    myDiv2Para.appendTo('#comp_media_player');
-  });
-</script>
-
 <div class="main_content" id="create_comp_content">
   <h1 style="margin-top:15px;; padding-top:0px;;">{{$comp->title}}</h1>
 
@@ -77,4 +70,13 @@
     <input type="submit" class="btn btn-danger" value="Delete" />
   </form>
 </div>
+@endsection
+
+@section('addtl_scripts')
+<script>
+  $(document).ready(function($){
+    var myDiv2Para = $("#div_audioplayer").detach();
+    myDiv2Para.appendTo('#comp_media_player');
+  });
+</script>
 @endsection

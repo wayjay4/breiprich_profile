@@ -1,13 +1,6 @@
 @extends('layouts.composer.app')
 
 @section('content')
-  <script>
-    $(document).ready(function($){
-      var myDiv2Para = $("#div_audioplayer").detach();
-      myDiv2Para.appendTo('#comp_media_player');
-    });
-  </script>
-
   <div class="main_content" id="comp_content">
     <div id="comp_textArea">
 
@@ -131,4 +124,13 @@
 
     </div>
   </div>
+@endsection
+
+@section('addtl_scripts')
+<script>
+  $(document).ready(function($){
+    var myDiv2Para = $("#div_audioplayer").detach();
+    myDiv2Para.appendTo('#comp_media_player');
+  });
+</script>
 @endsection

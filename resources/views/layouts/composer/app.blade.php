@@ -9,10 +9,71 @@
 
   <title>{{ config('app.name') }}</title>
 
+  <!-- Styles -->
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet" >
+  <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/cover.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/composer.css') }}" rel="stylesheet">
+  <!--
+  <link href="{{ asset('css/all_styles.css') }}" rel="stylesheet" >
+  -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <style type="text/css">
+    #spinner {
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body class="text-center">
+  <div id="app" class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">{{ config('app.name') }}</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link link" href="{{ url('/') }}">Home</a>
+          <a class="nav-link link" href="{{ url('/biography') }}">Biography</a>
+          <a class="nav-link link" href="{{ url('/recordings') }}">Recordings</a>
+          <a class="nav-link link" href="{{ url('/scores') }}">Compositions</a>
+          <!-- <a class="nav-link link" href="{{ url('/audio') }}">Audio Excerpts</a> -->
+          <a class="nav-link link" href="{{ url('/reviews') }}">Reviews</a>
+          <a class="nav-link link" href="{{ url('/contact') }}">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main" class="inner cover">
+      @yield('content')
+    </main>
+
+    <footer class="mastfoot mt-auto">
+      <div id="div_audioplayer" hidden>
+        <audio id="audio_player" controls loop preload hidden style="display:inline-block; margin:15px; height:30px;">
+          <source id="audio_source" src="{{asset('music/xchamber/'.'old_pond.mp3')}}" type="audio/mpeg">
+          Error: your web browser does not support this audio player.
+        </audio>
+        <div id="div_track">
+          <span id="track_name"></span>
+        </div>
+      </div>
+
+      <div id="spinner" style="display:none;">
+        <img width="150" height="150" id="img-spinner" src="{{asset('images/'.'preloader.gif')}}" alt="Loading" />
+      </div>
+
+      <div class="inner">
+        <p>Copyright &copy; <a href="{{ url('/') }}">{{ config('app.name') }}</a>, by <a href="http://waylondixon.com">@waylondixon</a>.</p>
+      </div>
+    </footer>
+  </div>
+
   <!-- Scripts -->
   <script src="{{ asset('js/app.js') }}"></script>
   <script src="{{ asset('js/all_scripts.js') }}"></script>
-
 
   <script>
     $(document).ready(function($){
@@ -126,66 +187,6 @@
     });
   </script>
 
-  <!-- Styles -->
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet" >
-  <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/cover.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/composer.css') }}" rel="stylesheet">
-  <!--
-  <link href="{{ asset('css/all_styles.css') }}" rel="stylesheet" >
-  -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-  <style type="text/css">
-    #spinner {
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform: translate(-50%, -50%);
-    }
-  </style>
-</head>
-
-<body class="text-center">
-  <div id="app" class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto">
-      <div class="inner">
-        <h3 class="masthead-brand">{{ config('app.name') }}</h3>
-        <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link link" href="{{ url('/') }}">Home</a>
-          <a class="nav-link link" href="{{ url('/biography') }}">Biography</a>
-          <a class="nav-link link" href="{{ url('/recordings') }}">Recordings</a>
-          <a class="nav-link link" href="{{ url('/scores') }}">Compositions</a>
-          <!-- <a class="nav-link link" href="{{ url('/audio') }}">Audio Excerpts</a> -->
-          <a class="nav-link link" href="{{ url('/reviews') }}">Reviews</a>
-          <a class="nav-link link" href="{{ url('/contact') }}">Contact</a>
-        </nav>
-      </div>
-    </header>
-
-    <main role="main" class="inner cover">
-      @yield('content')
-    </main>
-
-    <footer class="mastfoot mt-auto">
-      <div id="div_audioplayer" hidden>
-        <audio id="audio_player" controls loop preload hidden style="display:inline-block; margin:15px; height:30px;">
-          <source id="audio_source" src="{{asset('music/xchamber/'.'old_pond.mp3')}}" type="audio/mpeg">
-          Error: your web browser does not support this audio player.
-        </audio>
-        <div id="div_track">
-          <span id="track_name"></span>
-        </div>
-      </div>
-
-      <div id="spinner" style="display:none;">
-        <img width="150" height="150" id="img-spinner" src="{{asset('images/'.'preloader.gif')}}" alt="Loading" />
-      </div>
-
-      <div class="inner">
-        <p>Copyright &copy; <a href="{{ url('/') }}">{{ config('app.name') }}</a>, by <a href="http://waylondixon.com">@waylondixon</a>.</p>
-      </div>
-    </footer>
-  </div>
+  @yield('addtl_scripts')
 </body>
 </html>
