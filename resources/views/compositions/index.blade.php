@@ -19,5 +19,11 @@
   @else
     <p>No compositions found</p>
   @endif
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm" id="Compositions"></div>
+    </div>
+  </div>
 </div>
 @endsection
