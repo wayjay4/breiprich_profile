@@ -29,6 +29,9 @@ Route::get('/reviews', 'Composer\PagesController@reviews');
 
 Route::get('/contact', 'Composer\PagesController@contact');
 
+Route::get('/api_test', function(){
+  return App\Composition::all();
+});
 
 // Begin: dashboard routes
 
