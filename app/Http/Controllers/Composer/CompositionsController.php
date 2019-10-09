@@ -53,12 +53,13 @@ class CompositionsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-          'title' => 'required',
-          'year' => 'required',
-          'instruments' => 'required',
-          'total_movements' => 'required',
-          'versions' => 'required',
-          'total_time' => 'required'
+          'title' => 'required|max:255',
+          'year' => 'required|max:255',
+          'instruments' => 'nullable|max:255',
+          'total_movements' => 'nullable|max:255',
+          'versions' => 'nullable|max:255',
+          'total_time' => 'nullable|max:255',
+          'music_genre' => 'required|exists:music_genres,id'
         ]);
 
         // create composition
@@ -121,12 +122,13 @@ class CompositionsController extends Controller
     public function update(Request $request, $id)
     {
       $this->validate($request, [
-        'title' => 'required',
-        'year' => 'required',
-        'instruments' => 'required',
-        'total_movements' => 'required',
-        'versions' => 'required',
-        'total_time' => 'required'
+        'title' => 'required|max:255',
+        'year' => 'required|max:255',
+        'instruments' => 'nullable|max:255',
+        'total_movements' => 'nullable|max:255',
+        'versions' => 'nullable|max:255',
+        'total_time' => 'nullable|max:255',
+        'music_genre' => 'required|exists:music_genres,id'
       ]);
 
       // create composition

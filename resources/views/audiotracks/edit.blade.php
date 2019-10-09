@@ -6,6 +6,8 @@
     $("#trackEditSubmitButton").on("click", function(event){
       event.preventDefault();
 
+      $("#spinner").show();
+
       // the view has a form containing inner forms that resets the outer form's input.attr(_method) to DELETE,
       // this procedure changes them all to PUT so that the outer form works properly
       $("input[name=_method]").each(function(key, target){
@@ -87,12 +89,7 @@
         </div>
 
         <div style="padding:15px; margin:15px; border-radius:25px; border: 1px solid yellow;">
-          @if($track->image_name != null && $track->image_name != "blank_image.png")
-            <img src="{{asset('storage/images/comp_tracks/'.$track->image_name)}}" alt="{{$track->image_name}}" width="125" height="125">
-          @else
-            <img src="{{asset('storage/images/comp_tracks/'.'blank_image.png')}}" alt="blank_image.png" width="125" height="125">
-            <div style=" position: absolute; top:75px; left:75px; color: black;">No Image</div>
-          @endif
+          <img src="{{asset('storage/images/comp_tracks/'.$image_name)}}" alt="{{$image_name}}" width="125" height="125">
         </div>
       </div>
     </div>

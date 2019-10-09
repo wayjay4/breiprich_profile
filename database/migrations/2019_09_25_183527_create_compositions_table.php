@@ -15,8 +15,8 @@ class CreateCompositionsTable extends Migration
     {
         Schema::create('compositions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title')->nullable();
-            $table->string('year')->nullable();
+            $table->string('title');
+            $table->string('year');
             $table->string('instruments')->nullable();
             $table->string('total_movements')->nullable();
             $table->string('versions')->nullable();

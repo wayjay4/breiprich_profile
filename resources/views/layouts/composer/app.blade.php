@@ -135,6 +135,15 @@
   <link href="{{ asset('css/all_styles.css') }}" rel="stylesheet" >
   -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <style type="text/css">
+    #spinner {
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
 </head>
 
 <body class="text-center">
@@ -167,6 +176,10 @@
         <div id="div_track">
           <span id="track_name"></span>
         </div>
+      </div>
+
+      <div id="spinner" style="display:none;">
+        <img width="150" height="150" id="img-spinner" src="{{asset('images/'.'preloader.gif')}}" alt="Loading" />
       </div>
 
       <div class="inner">

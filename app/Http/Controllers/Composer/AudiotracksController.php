@@ -39,6 +39,7 @@ class AudiotracksController extends Controller
       return view('audiotracks.edit')->with([
         'compID' => $compID,
         'track' => $track,
+        'image_name' => 'blank_image.png',
         'create' => true
       ]);
     }
@@ -125,6 +126,7 @@ class AudiotracksController extends Controller
       return view('audiotracks.edit')->with([
         'compID' => $compID,
         'track' => $track,
+        'image_name' => $track->image_name,
         'create' => false,
       ]);
     }
