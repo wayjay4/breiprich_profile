@@ -66100,9 +66100,9 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/js/app.js":
+/***/ "./resources/js/App.js":
 /*!*****************************!*\
-  !*** ./resources/js/app.js ***!
+  !*** ./resources/js/App.js ***!
   \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -66271,12 +66271,12 @@ if (document.getElementById('example')) {
 
 /***/ 0:
 /*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
+  !*** multi ./resources/js/App.js ./resources/sass/app.scss ***!
   \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/vagrant/code/breiprich_profile/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /home/vagrant/code/breiprich_profile/resources/js/App.js */"./resources/js/App.js");
 module.exports = __webpack_require__(/*! /home/vagrant/code/breiprich_profile/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
