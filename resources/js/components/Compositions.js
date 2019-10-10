@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
+import ItemService from './shared/mock-item-service';
 
 class Compositions extends Component {
   constructor(props){
     super(props);
+    this.itemService = new ItemService();
+    this.getCompositions = this.getCompositions.bind(this);
 
     this.state = {
       compositions: [],
@@ -13,14 +15,7 @@ class Compositions extends Component {
   }
 
   componentDidMount(){
-    axios.get('/api_test').then(response => {
-      this.setState({
-        compositions: response.data
-      });
-    })
-    .catch((err)=> {
-      console.log(err);
-    });
+    this.getCompositions();
   }
 
   render(){
@@ -44,6 +39,14 @@ class Compositions extends Component {
         }
       </div>
     );
+  }
+
+  getCompositions(){
+    this.itemService.retrieveItems(function(items){
+      this.setState({
+        compositions: items
+      });
+    }.bind(this));
   }
 }
 
