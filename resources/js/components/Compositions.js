@@ -9,7 +9,7 @@ class Compositions extends Component {
     this.getCompositions = this.getCompositions.bind(this);
 
     this.state = {
-      compositions: [],
+      compositions: null,
       msg: 'My message to me.'
     }
   }
@@ -19,24 +19,36 @@ class Compositions extends Component {
   }
 
   render(){
+    const comps = this.state.compositions;
+    //if(!comps) return null;
+
     return (
       <div className="CompositionsApp">
-        <p>Hello World! I am a Compositions Application.</p>
+        <h1>Compositions</h1>
 
+        <div>
         {
-          this.state.compositions.map(
-            data =>
-            <p>
-              title: {data.title} <br />
-              year: {data.year} <br />
-              instruments: {data.instruments} <br />
-              total_movements: {data.total_movements} <br />
-              versions: {data.versions} <br />
-              total_time: {data.total_time} <br />
-              music_genre_id: {data.music_genre_id} <br />
+          this.props.testData.map(
+            comp =>
+            <p key={comp.id}>
+              <a href={'/comps/'+comp.id}>
+                {comp.title + ' -OR- ' + this.props.testData[parseInt(comp.id)-1].title}
+
+              </a>
+              <br />
+
+              {/* year: {comp.year} <br />
+              instruments: {comp.instruments} <br />
+              total_movements: {comp.total_movements} <br />
+              versions: {comp.versions} <br />
+              total_time: {comp.total_time} <br />
+              music_genre_id: {comp.music_genre_id} <br /> */}
+
+              <span style={{marginLeft: '20px'}}><small>Created on {comp.created_at}</small></span>
             </p>
           )
         }
+        </div>
       </div>
     );
   }
@@ -51,7 +63,10 @@ class Compositions extends Component {
 }
 
 if(document.getElementById('Compositions')){
-  ReactDOM.render(<Compositions />, document.getElementById('Compositions'));
+  var testData = JSON.parse(document.getElementById('Compositions').getAttribute('data-testData'));
+  document.getElementById('Compositions').setAttribute('data-testData', '')
+  console.dir(testData);
+  ReactDOM.render(<Compositions testData={testData} />, document.getElementById('Compositions'));
 }
 
 export default Compositions;

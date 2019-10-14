@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="main_content" id="create_comp_content">
-
+  <!--
   <h1>Compositions</h1>
 
   <p>
@@ -19,10 +19,11 @@
   @else
     <p>No compositions found</p>
   @endif
+  -->
 
   <div class="container">
     <div class="row">
-      <div class="col-sm" id="Compositions"></div>
+      <div class="col-sm" id="Compositions" data-testData="{{$comps}}"></div>
     </div>
   </div>
 </div>

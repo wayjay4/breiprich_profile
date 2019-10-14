@@ -66983,7 +66983,7 @@ function (_Component) {
     _this.itemService = new _shared_mock_item_service__WEBPACK_IMPORTED_MODULE_2__["default"]();
     _this.getCompositions = _this.getCompositions.bind(_assertThisInitialized(_this));
     _this.state = {
-      compositions: [],
+      compositions: null,
       msg: 'My message to me.'
     };
     return _this;
@@ -66997,11 +66997,23 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
+      var comps = this.state.compositions; //if(!comps) return null;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "CompositionsApp"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hello World! I am a Compositions Application."), this.state.compositions.map(function (data) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "title: ", data.title, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "year: ", data.year, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "instruments: ", data.instruments, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "total_movements: ", data.total_movements, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "versions: ", data.versions, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "total_time: ", data.total_time, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "music_genre_id: ", data.music_genre_id, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
-      }));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Compositions"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.testData.map(function (comp) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          key: comp.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: '/comps/' + comp.id
+        }, comp.title + ' -OR- ' + _this2.props.testData[parseInt(comp.id) - 1].title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          style: {
+            marginLeft: '20px'
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, "Created on ", comp.created_at)));
+      })));
     }
   }, {
     key: "getCompositions",
@@ -67018,7 +67030,12 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 if (document.getElementById('Compositions')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Compositions, null), document.getElementById('Compositions'));
+  var testData = JSON.parse(document.getElementById('Compositions').getAttribute('data-testData'));
+  document.getElementById('Compositions').setAttribute('data-testData', '');
+  console.dir(testData);
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Compositions, {
+    testData: testData
+  }), document.getElementById('Compositions'));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Compositions);
