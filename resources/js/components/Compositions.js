@@ -20,7 +20,7 @@ class Compositions extends Component {
 
   render(){
     const comps = this.state.compositions;
-    //if(!comps) return null;
+    if(!comps) return null;
 
     return (
       <div className="CompositionsApp">
@@ -28,12 +28,11 @@ class Compositions extends Component {
 
         <div>
         {
-          this.props.testData.map(
+          comps.map(
             comp =>
             <p key={comp.id}>
               <a href={'/comps/'+comp.id}>
-                {comp.title + ' -OR- ' + this.props.testData[parseInt(comp.id)-1].title}
-
+                {comp.title}
               </a>
               <br />
 
@@ -63,10 +62,7 @@ class Compositions extends Component {
 }
 
 if(document.getElementById('Compositions')){
-  var testData = JSON.parse(document.getElementById('Compositions').getAttribute('data-testData'));
-  document.getElementById('Compositions').setAttribute('data-testData', '')
-  console.dir(testData);
-  ReactDOM.render(<Compositions testData={testData} />, document.getElementById('Compositions'));
+  ReactDOM.render(<Compositions />, document.getElementById('Compositions'));
 }
 
 export default Compositions;

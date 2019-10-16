@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/login', 'AuthController@login')->name('api_login');
 Route::post('/register', 'AuthController@register')->name('api_register');
-Route::post('logout', 'AuthController@logout')->middleware('auth:api')->name('api_logout');
+Route::post('/logout', 'AuthController@logout')->middleware('auth:api')->name('api_logout');

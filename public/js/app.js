@@ -66997,18 +66997,16 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
-      var comps = this.state.compositions; //if(!comps) return null;
-
+      var comps = this.state.compositions;
+      if (!comps) return null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "CompositionsApp"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Compositions"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.testData.map(function (comp) {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Compositions"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comps.map(function (comp) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           key: comp.id
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: '/comps/' + comp.id
-        }, comp.title + ' -OR- ' + _this2.props.testData[parseInt(comp.id) - 1].title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        }, comp.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           style: {
             marginLeft: '20px'
           }
@@ -67030,12 +67028,7 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 if (document.getElementById('Compositions')) {
-  var testData = JSON.parse(document.getElementById('Compositions').getAttribute('data-testData'));
-  document.getElementById('Compositions').setAttribute('data-testData', '');
-  console.dir(testData);
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Compositions, {
-    testData: testData
-  }), document.getElementById('Compositions'));
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Compositions, null), document.getElementById('Compositions'));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Compositions);
@@ -67180,6 +67173,42 @@ function () {
       }
 
       return retrieveItems;
+    }()
+  }, {
+    key: "retrieveToken",
+    value: function () {
+      var _retrieveToken = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(handleResponse) {
+        var xhr, body;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                // local vars
+                xhr = new XMLHttpRequest(); // set callback function
+
+                xhr.addEventListener('load', function () {
+                  return Promise.resolve(handleResponse(JSON.parse(xhr.responseText)));
+                });
+                xhr.open('POST', '/api/login', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                body = 'password=popquiz4u&username=wayjay4@yahoo.com';
+                xhr.send(encodeURI(body));
+
+              case 6:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      function retrieveToken(_x2) {
+        return _retrieveToken.apply(this, arguments);
+      }
+
+      return retrieveToken;
     }()
   }]);
 

@@ -14,6 +14,24 @@ class ItemService{
     xhr.open('GET', '/api_test', true);
     xhr.send();
   }
+
+  async retrieveToken(handleResponse){
+    // local vars
+    var xhr, body;
+
+    xhr = new XMLHttpRequest();
+
+    // set callback function
+    xhr.addEventListener('load', ()=>{
+      return Promise.resolve(handleResponse(JSON.parse(xhr.responseText)));
+    });
+
+    xhr.open('POST', '/api/login', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    body = 'password=popquiz4u&username=wayjay4@yahoo.com';
+
+    xhr.send(encodeURI(body));
+  }
 }
 
 export default ItemService;
