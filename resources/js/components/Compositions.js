@@ -6,11 +6,11 @@ class Compositions extends Component {
   constructor(props){
     super(props);
     this.itemService = new ItemService();
-    this.getCompositions = this.getCompositions.bind(this);
+    this.initializeApp = this.initializeApp.bind(this);
+    this.apiRouter = this.apiRouter.bind(this);
     this.getApiToken = this.getApiToken.bind(this);
     this.getUser = this.getUser.bind(this);
-    this.apiRouter = this.apiRouter.bind(this);
-    this.initializeApp = this.initializeApp.bind(this);
+    this.getCompositions = this.getCompositions.bind(this);
 
     this.state = {
       compositions: null,
@@ -24,33 +24,23 @@ class Compositions extends Component {
 
   initializeApp(){
     // local vars
-    var params, actionRequest, actions;
+    var params;
 
     // set local vars
     params = null;
-    actionRequest = 'getUser';
-    actions = {
-      actionRequest: actionRequest,
-      params: params
-    }
 
-    this.apiRouter(null, function(){
-      this.getCompositions(params);
+    this.apiRouter(function(){
       this.getUser(params);
+      this.getCompositions(params);
     }.bind(this));
 
     // testing on delay, also sample calls
     //setTimeout(function(){
-      //this.apiRouter(null, function(){
+      //this.apiRouter(function(){
         //this.getCompositions(params);
         //this.getUser(params);
       //}.bind(this));
-    //}.bind(this), 10000);
-
-    // testing on delay, also sample calls
-    //setTimeout(function(){
-      //this.apiRouter(actions, null);
-    //}.bind(this), 10000);
+    //}.bind(this), 5000);
   }
 
   componentDidMount(){
@@ -58,8 +48,14 @@ class Compositions extends Component {
   }
 
   render(){
+    const user = this.state.user;
     const comps = this.state.compositions;
-    if(!comps) return null;
+
+    // display data for troubleshooting
+    console.log('user:'); console.dir(user);
+    console.log('comps:'); console.dir(comps);
+    
+    if(!comps || !user) return null;
 
     return (
       <div className="CompositionsApp">
@@ -89,38 +85,26 @@ class Compositions extends Component {
         </div>
 
         <div>
-          Token value: {this.state.token}
+          <p>User value: {this.state.user.name}</p>
         </div>
+
+        {/* <div>
+          <p>Token value: {this.state.token}</p>
+        </div> */}
       </div>
     );
   }
 
-  apiRouter(actions, runbatchHandler){
-    if(runbatchHandler != null){
-      if(this.state.token == null){
-        this.getApiToken(
-          function(){
-            return runbatchHandler();
-          }.bind(this)
-        );
-      }
-      else{
-        return runbatchHandler();
-      }
+  apiRouter(runBatchHandler){
+    if(this.state.token == null){
+      this.getApiToken(
+        function(){
+          return runBatchHandler();
+        }.bind(this)
+      );
     }
     else{
-      var runMe = 'this.'+actions.actionRequest+'(actions.params)';
-
-      if(this.state.token == null){
-        this.getApiToken(
-          function(){
-            return eval(runMe);
-          }.bind(this)
-        );
-      }
-      else{
-        return eval(runMe);
-      }
+      return runBatchHandler();
     }
   }
 

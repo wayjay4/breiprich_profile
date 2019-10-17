@@ -66981,11 +66981,11 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Compositions).call(this, props));
     _this.itemService = new _shared_mock_item_service__WEBPACK_IMPORTED_MODULE_2__["default"]();
-    _this.getCompositions = _this.getCompositions.bind(_assertThisInitialized(_this));
+    _this.initializeApp = _this.initializeApp.bind(_assertThisInitialized(_this));
+    _this.apiRouter = _this.apiRouter.bind(_assertThisInitialized(_this));
     _this.getApiToken = _this.getApiToken.bind(_assertThisInitialized(_this));
     _this.getUser = _this.getUser.bind(_assertThisInitialized(_this));
-    _this.apiRouter = _this.apiRouter.bind(_assertThisInitialized(_this));
-    _this.initializeApp = _this.initializeApp.bind(_assertThisInitialized(_this));
+    _this.getCompositions = _this.getCompositions.bind(_assertThisInitialized(_this));
     _this.state = {
       compositions: null,
       token: null,
@@ -67002,28 +67002,19 @@ function (_Component) {
     key: "initializeApp",
     value: function initializeApp() {
       // local vars
-      var params, actionRequest, actions; // set local vars
+      var params; // set local vars
 
       params = null;
-      actionRequest = 'getUser';
-      actions = {
-        actionRequest: actionRequest,
-        params: params
-      };
-      this.apiRouter(null, function () {
-        this.getCompositions(params);
+      this.apiRouter(function () {
         this.getUser(params);
+        this.getCompositions(params);
       }.bind(this)); // testing on delay, also sample calls
       //setTimeout(function(){
-      //this.apiRouter(null, function(){
+      //this.apiRouter(function(){
       //this.getCompositions(params);
       //this.getUser(params);
       //}.bind(this));
-      //}.bind(this), 10000);
-      // testing on delay, also sample calls
-      //setTimeout(function(){
-      //this.apiRouter(actions, null);
-      //}.bind(this), 10000);
+      //}.bind(this), 5000);
     }
   }, {
     key: "componentDidMount",
@@ -67032,8 +67023,14 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var comps = this.state.compositions;
-      if (!comps) return null;
+      var user = this.state.user;
+      var comps = this.state.compositions; // display data for troubleshooting
+
+      console.log('user:');
+      console.dir(user);
+      console.log('comps:');
+      console.dir(comps);
+      if (!comps || !user) return null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "CompositionsApp"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Compositions"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comps.map(function (comp) {
@@ -67046,29 +67043,17 @@ function (_Component) {
             marginLeft: '20px'
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, "Created on ", comp.created_at)));
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Token value: ", this.state.token));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "User value: ", this.state.user.name)));
     }
   }, {
     key: "apiRouter",
-    value: function apiRouter(actions, runbatchHandler) {
-      if (runbatchHandler != null) {
-        if (this.state.token == null) {
-          this.getApiToken(function () {
-            return runbatchHandler();
-          }.bind(this));
-        } else {
-          return runbatchHandler();
-        }
+    value: function apiRouter(runBatchHandler) {
+      if (this.state.token == null) {
+        this.getApiToken(function () {
+          return runBatchHandler();
+        }.bind(this));
       } else {
-        var runMe = 'this.' + actions.actionRequest + '(actions.params)';
-
-        if (this.state.token == null) {
-          this.getApiToken(function () {
-            return eval(runMe);
-          }.bind(this));
-        } else {
-          return eval(runMe);
-        }
+        return runBatchHandler();
       }
     }
   }, {
