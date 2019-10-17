@@ -10,6 +10,7 @@ class Compositions extends Component {
     this.getApiToken = this.getApiToken.bind(this);
     this.getUser = this.getUser.bind(this);
     this.apiRouter = this.apiRouter.bind(this);
+    this.initializeApp = this.initializeApp.bind(this);
 
     this.state = {
       compositions: null,
@@ -18,10 +19,10 @@ class Compositions extends Component {
       msg: 'My message to me.'
     }
 
-    //this.getApiToken();
+    this.initializeApp();
   }
 
-  componentDidMount(){
+  initializeApp(){
     // local vars
     var params, actionRequest, actions;
 
@@ -50,6 +51,10 @@ class Compositions extends Component {
     //setTimeout(function(){
       //this.apiRouter(actions, null);
     //}.bind(this), 10000);
+  }
+
+  componentDidMount(){
+    //this.initializeApp();
   }
 
   render(){

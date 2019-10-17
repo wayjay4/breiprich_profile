@@ -66985,19 +66985,22 @@ function (_Component) {
     _this.getApiToken = _this.getApiToken.bind(_assertThisInitialized(_this));
     _this.getUser = _this.getUser.bind(_assertThisInitialized(_this));
     _this.apiRouter = _this.apiRouter.bind(_assertThisInitialized(_this));
+    _this.initializeApp = _this.initializeApp.bind(_assertThisInitialized(_this));
     _this.state = {
       compositions: null,
       token: null,
       user: null,
-      msg: 'My message to me.' //this.getApiToken();
-
+      msg: 'My message to me.'
     };
+
+    _this.initializeApp();
+
     return _this;
   }
 
   _createClass(Compositions, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
+    key: "initializeApp",
+    value: function initializeApp() {
       // local vars
       var params, actionRequest, actions; // set local vars
 
@@ -67021,6 +67024,10 @@ function (_Component) {
       //setTimeout(function(){
       //this.apiRouter(actions, null);
       //}.bind(this), 10000);
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {//this.initializeApp();
     }
   }, {
     key: "render",
