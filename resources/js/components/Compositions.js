@@ -37,25 +37,25 @@ class Compositions extends Component {
     // testing on delay, also sample calls
     //setTimeout(function(){
       //this.apiRouter(function(){
-        //this.getCompositions(params);
         //this.getUser(params);
+        //this.getCompositions(params);
       //}.bind(this));
     //}.bind(this), 5000);
   }
 
   componentDidMount(){
-    //this.initializeApp();
+    // insert code here
   }
 
   render(){
     const user = this.state.user;
     const comps = this.state.compositions;
 
+    if(!comps || !user) return null;
+
     // display data for troubleshooting
     console.log('user:'); console.dir(user);
     console.log('comps:'); console.dir(comps);
-    
-    if(!comps || !user) return null;
 
     return (
       <div className="CompositionsApp">
@@ -95,17 +95,15 @@ class Compositions extends Component {
     );
   }
 
-  apiRouter(runBatchHandler){
-    if(this.state.token == null){
+  apiRouter(runActionRequest){
+    if(this.state.token == null)
       this.getApiToken(
         function(){
-          return runBatchHandler();
+          runActionRequest();
         }.bind(this)
       );
-    }
-    else{
-      return runBatchHandler();
-    }
+    else
+      runActionRequest();
   }
 
   getApiToken(runActionRequest){
@@ -114,7 +112,7 @@ class Compositions extends Component {
         token: token.access_token
       });
 
-      return runActionRequest();
+      runActionRequest();
     }.bind(this));
   }
 

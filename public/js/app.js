@@ -67011,26 +67011,26 @@ function (_Component) {
       }.bind(this)); // testing on delay, also sample calls
       //setTimeout(function(){
       //this.apiRouter(function(){
-      //this.getCompositions(params);
       //this.getUser(params);
+      //this.getCompositions(params);
       //}.bind(this));
       //}.bind(this), 5000);
     }
   }, {
     key: "componentDidMount",
-    value: function componentDidMount() {//this.initializeApp();
+    value: function componentDidMount() {// insert code here
     }
   }, {
     key: "render",
     value: function render() {
       var user = this.state.user;
-      var comps = this.state.compositions; // display data for troubleshooting
+      var comps = this.state.compositions;
+      if (!comps || !user) return null; // display data for troubleshooting
 
       console.log('user:');
       console.dir(user);
       console.log('comps:');
       console.dir(comps);
-      if (!comps || !user) return null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "CompositionsApp"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Compositions"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comps.map(function (comp) {
@@ -67047,14 +67047,10 @@ function (_Component) {
     }
   }, {
     key: "apiRouter",
-    value: function apiRouter(runBatchHandler) {
-      if (this.state.token == null) {
-        this.getApiToken(function () {
-          return runBatchHandler();
-        }.bind(this));
-      } else {
-        return runBatchHandler();
-      }
+    value: function apiRouter(runActionRequest) {
+      if (this.state.token == null) this.getApiToken(function () {
+        runActionRequest();
+      }.bind(this));else runActionRequest();
     }
   }, {
     key: "getApiToken",
@@ -67063,7 +67059,7 @@ function (_Component) {
         this.setState({
           token: token.access_token
         });
-        return runActionRequest();
+        runActionRequest();
       }.bind(this));
     }
   }, {
