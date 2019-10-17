@@ -66982,9 +66982,15 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Compositions).call(this, props));
     _this.itemService = new _shared_mock_item_service__WEBPACK_IMPORTED_MODULE_2__["default"]();
     _this.getCompositions = _this.getCompositions.bind(_assertThisInitialized(_this));
+    _this.getApiToken = _this.getApiToken.bind(_assertThisInitialized(_this));
+    _this.getUser = _this.getUser.bind(_assertThisInitialized(_this));
+    _this.apiRouter = _this.apiRouter.bind(_assertThisInitialized(_this));
     _this.state = {
       compositions: null,
-      msg: 'My message to me.'
+      token: null,
+      user: null,
+      msg: 'My message to me.' //this.getApiToken();
+
     };
     return _this;
   }
@@ -66992,7 +66998,29 @@ function (_Component) {
   _createClass(Compositions, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.getCompositions();
+      // local vars
+      var params, actionRequest, actions; // set local vars
+
+      params = null;
+      actionRequest = 'getUser';
+      actions = {
+        actionRequest: actionRequest,
+        params: params
+      };
+      this.apiRouter(null, function () {
+        this.getCompositions(params);
+        this.getUser(params);
+      }.bind(this)); // testing on delay, also sample calls
+      //setTimeout(function(){
+      //this.apiRouter(null, function(){
+      //this.getCompositions(params);
+      //this.getUser(params);
+      //}.bind(this));
+      //}.bind(this), 10000);
+      // testing on delay, also sample calls
+      //setTimeout(function(){
+      //this.apiRouter(actions, null);
+      //}.bind(this), 10000);
     }
   }, {
     key: "render",
@@ -67011,15 +67039,61 @@ function (_Component) {
             marginLeft: '20px'
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, "Created on ", comp.created_at)));
-      })));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Token value: ", this.state.token));
+    }
+  }, {
+    key: "apiRouter",
+    value: function apiRouter(actions, runbatchHandler) {
+      if (runbatchHandler != null) {
+        if (this.state.token == null) {
+          this.getApiToken(function () {
+            return runbatchHandler();
+          }.bind(this));
+        } else {
+          return runbatchHandler();
+        }
+      } else {
+        var runMe = 'this.' + actions.actionRequest + '(actions.params)';
+
+        if (this.state.token == null) {
+          this.getApiToken(function () {
+            return eval(runMe);
+          }.bind(this));
+        } else {
+          return eval(runMe);
+        }
+      }
+    }
+  }, {
+    key: "getApiToken",
+    value: function getApiToken(runActionRequest) {
+      this.itemService.retrieveToken(function (token) {
+        this.setState({
+          token: token.access_token
+        });
+        return runActionRequest();
+      }.bind(this));
     }
   }, {
     key: "getCompositions",
-    value: function getCompositions() {
+    value: function getCompositions(params) {
       this.itemService.retrieveItems(function (items) {
         this.setState({
           compositions: items
-        });
+        }); // display data for troubleshooting
+        //console.log('items:'); console.dir(items);
+        //console.log('params:'); console.dir(params);
+      }.bind(this));
+    }
+  }, {
+    key: "getUser",
+    value: function getUser(params) {
+      this.itemService.retrieveUser(this.state.token, function (user) {
+        this.setState({
+          user: user
+        }); // display data for troubleshooting
+        //console.log('user:'); console.dir(user);
+        //console.log('params:'); console.dir(params);
       }.bind(this));
     }
   }]);
@@ -67209,6 +67283,42 @@ function () {
       }
 
       return retrieveToken;
+    }()
+  }, {
+    key: "retrieveUser",
+    value: function () {
+      var _retrieveUser = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(token, handleResponse) {
+        var xhr;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                // local vars
+                xhr = new XMLHttpRequest(); // set callback function
+
+                xhr.addEventListener('load', function () {
+                  return Promise.resolve(handleResponse(JSON.parse(xhr.responseText)));
+                });
+                xhr.open('GET', 'api/user', true);
+                xhr.setRequestHeader('Accept', 'application/json');
+                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                xhr.send();
+
+              case 6:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }));
+
+      function retrieveUser(_x3, _x4) {
+        return _retrieveUser.apply(this, arguments);
+      }
+
+      return retrieveUser;
     }()
   }]);
 

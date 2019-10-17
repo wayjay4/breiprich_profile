@@ -32,6 +32,25 @@ class ItemService{
 
     xhr.send(encodeURI(body));
   }
+
+  async retrieveUser(token, handleResponse){
+    // local vars
+    var xhr;
+
+    xhr = new XMLHttpRequest();
+
+    // set callback function
+    xhr.addEventListener('load', ()=>{
+      return Promise.resolve(handleResponse(JSON.parse(xhr.responseText)));
+    });
+
+    xhr.open('GET', 'api/user', true);
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.setRequestHeader('Authorization', 'Bearer '+token);
+
+    xhr.send();
+
+  }
 }
 
 export default ItemService;
