@@ -66989,8 +66989,7 @@ function (_Component) {
     _this.state = {
       compositions: null,
       token: null,
-      user: null,
-      msg: 'My message to me.'
+      user: null
     };
 
     _this.initializeApp();
@@ -67001,20 +67000,11 @@ function (_Component) {
   _createClass(Compositions, [{
     key: "initializeApp",
     value: function initializeApp() {
-      // local vars
-      var params; // set local vars
-
-      params = null;
+      var params = {};
       this.apiRouter(function () {
         this.getUser(params);
         this.getCompositions(params);
-      }.bind(this)); // testing on delay, also sample calls
-      //setTimeout(function(){
-      //this.apiRouter(function(){
-      //this.getUser(params);
-      //this.getCompositions(params);
-      //}.bind(this));
-      //}.bind(this), 5000);
+      }.bind(this));
     }
   }, {
     key: "componentDidMount",

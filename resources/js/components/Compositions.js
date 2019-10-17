@@ -15,32 +15,19 @@ class Compositions extends Component {
     this.state = {
       compositions: null,
       token: null,
-      user: null,
-      msg: 'My message to me.'
+      user: null
     }
 
     this.initializeApp();
   }
 
   initializeApp(){
-    // local vars
-    var params;
-
-    // set local vars
-    params = null;
+    var params = {};
 
     this.apiRouter(function(){
       this.getUser(params);
       this.getCompositions(params);
     }.bind(this));
-
-    // testing on delay, also sample calls
-    //setTimeout(function(){
-      //this.apiRouter(function(){
-        //this.getUser(params);
-        //this.getCompositions(params);
-      //}.bind(this));
-    //}.bind(this), 5000);
   }
 
   componentDidMount(){
@@ -97,11 +84,9 @@ class Compositions extends Component {
 
   apiRouter(runActionRequest){
     if(this.state.token == null)
-      this.getApiToken(
-        function(){
-          runActionRequest();
-        }.bind(this)
-      );
+      this.getApiToken(function(){
+        runActionRequest();
+      }.bind(this));
     else
       runActionRequest();
   }
@@ -117,31 +102,27 @@ class Compositions extends Component {
   }
 
   getCompositions(params){
-    this.itemService.retrieveItems(
-      function(items){
-        this.setState({
-          compositions: items
-        });
+    this.itemService.retrieveItems(function(items){
+      this.setState({
+        compositions: items
+      });
 
-        // display data for troubleshooting
-        //console.log('items:'); console.dir(items);
-        //console.log('params:'); console.dir(params);
-      }.bind(this)
-    );
+      // display data for troubleshooting
+      //console.log('items:'); console.dir(items);
+      //console.log('params:'); console.dir(params);
+    }.bind(this));
   }
 
   getUser(params){
-    this.itemService.retrieveUser(this.state.token,
-      function(user){
-        this.setState({
-          user: user
-        });
+    this.itemService.retrieveUser(this.state.token, function(user){
+      this.setState({
+        user: user
+      });
 
-        // display data for troubleshooting
-        //console.log('user:'); console.dir(user);
-        //console.log('params:'); console.dir(params);
-      }.bind(this)
-    );
+      // display data for troubleshooting
+      //console.log('user:'); console.dir(user);
+      //console.log('params:'); console.dir(params);
+    }.bind(this));
   }
 }
 
