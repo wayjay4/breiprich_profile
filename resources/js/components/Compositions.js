@@ -30,10 +30,6 @@ class Compositions extends Component {
     }.bind(this));
   }
 
-  componentDidMount(){
-    // insert code here
-  }
-
   render(){
     const user = this.state.user;
     const comps = this.state.compositions;
@@ -46,7 +42,7 @@ class Compositions extends Component {
 
     return (
       <div className="CompositionsApp">
-        <h1>Compositions</h1>
+        <h1>Items</h1>
 
         <div>
         {

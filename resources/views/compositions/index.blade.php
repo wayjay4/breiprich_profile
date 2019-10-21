@@ -1,4 +1,4 @@
-@extends('layouts.composer.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="main_content" id="create_comp_content">

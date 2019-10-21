@@ -67007,10 +67007,6 @@ function (_Component) {
       }.bind(this));
     }
   }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {// insert code here
-    }
-  }, {
     key: "render",
     value: function render() {
       var user = this.state.user;
@@ -67023,7 +67019,7 @@ function (_Component) {
       console.dir(comps);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "CompositionsApp"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Compositions"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comps.map(function (comp) {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Items"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comps.map(function (comp) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           key: comp.id
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
