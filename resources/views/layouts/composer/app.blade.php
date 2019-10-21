@@ -26,6 +26,9 @@
       transform: translate(-50%, -50%);
     }
   </style>
+
+  <!-- Scripts -->
+  <script src="{{ asset('js/vendors/AC_RunActiveContent.js') }}"></script>
 </head>
 
 <body class="text-center">
@@ -72,13 +75,7 @@
 
   <!-- Scripts -->
   <script src="{{ asset('js/react/App.js') }}"></script>
-  <script src="{{ asset('js/bootstrap/bootstrap.js') }}"></script>
-  <script src="{{ asset('js/vendors/AC_RunActiveContent.js') }}"></script>
   <script src="{{ asset('js/bio/composer.js') }}"></script>
-
-  <script>
-
-  </script>
 
   @yield('addtl_scripts')
 </body>

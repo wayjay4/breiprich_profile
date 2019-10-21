@@ -11,28 +11,12 @@
 
   <!-- Styles -->
   <link href="{{ asset('css/bootstrap/bootstrap.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/bootstrap/dashboard.css') }}" rel="stylesheet">
   <!--
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet" >
-  <link href="{{ asset('css/bootstrap/cover.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/bio/composer.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet" >s
   -->
 
   <style type="text/css">
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-
     #spinner {
       position:absolute;
       top:50%;
@@ -41,7 +25,8 @@
     }
   </style>
 
-  <link href="{{ asset('css/bootstrap/dashboard.css') }}" rel="stylesheet">
+  <!-- Scripts -->
+  <script src="{{ asset('js/vendors/AC_RunActiveContent.js') }}"></script>
 </head>
 
 <body>
@@ -293,14 +278,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
   <script src="{{ asset('js/react/App.js') }}"></script>
-  <script src="{{ asset('js/bootstrap/bootstrap.js') }}" defer></script>
   <script src="{{ asset('js/bootstrap/dashboard.js') }}"></script>
-  <script src="{{ asset('js/vendors/AC_RunActiveContent.js') }}"></script>
-
-
-  <script>
-    // add code here
-  </script>
 
   @yield('addtl_scripts')
 </body>
