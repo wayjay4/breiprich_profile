@@ -66849,10 +66849,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/js/App.js":
-/*!*****************************!*\
-  !*** ./resources/js/App.js ***!
-  \*****************************/
+/***/ "./resources/react/App.js":
+/*!********************************!*\
+  !*** ./resources/react/App.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -66861,7 +66861,7 @@ module.exports = function(module) {
  * includes React and other helpers. It's a great starting point while
  * building robust, powerful web applications using React + Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/react/bootstrap.js");
 /**
  * Next, we will create a fresh React component instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -66869,16 +66869,16 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  */
 
 
-__webpack_require__(/*! ./components/Example */ "./resources/js/components/Example.js");
+__webpack_require__(/*! ./components/Example */ "./resources/react/components/Example.js");
 
-__webpack_require__(/*! ./components/Compositions */ "./resources/js/components/Compositions.js");
+__webpack_require__(/*! ./components/Compositions */ "./resources/react/components/Compositions.js");
 
 /***/ }),
 
-/***/ "./resources/js/bootstrap.js":
-/*!***********************************!*\
-  !*** ./resources/js/bootstrap.js ***!
-  \***********************************/
+/***/ "./resources/react/bootstrap.js":
+/*!**************************************!*\
+  !*** ./resources/react/bootstrap.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -66933,10 +66933,10 @@ if (token) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Compositions.js":
-/*!*************************************************!*\
-  !*** ./resources/js/components/Compositions.js ***!
-  \*************************************************/
+/***/ "./resources/react/components/Compositions.js":
+/*!****************************************************!*\
+  !*** ./resources/react/components/Compositions.js ***!
+  \****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -66946,7 +66946,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _shared_mock_item_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/mock-item-service */ "./resources/js/components/shared/mock-item-service.js");
+/* harmony import */ var _shared_mock_item_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/mock-item-service */ "./resources/react/components/shared/mock-item-service.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -67083,10 +67083,10 @@ if (document.getElementById('Compositions')) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Example.js":
-/*!********************************************!*\
-  !*** ./resources/js/components/Example.js ***!
-  \********************************************/
+/***/ "./resources/react/components/Example.js":
+/*!***********************************************!*\
+  !*** ./resources/react/components/Example.js ***!
+  \***********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -67159,10 +67159,10 @@ if (document.getElementById('example')) {
 
 /***/ }),
 
-/***/ "./resources/js/components/shared/mock-item-service.js":
-/*!*************************************************************!*\
-  !*** ./resources/js/components/shared/mock-item-service.js ***!
-  \*************************************************************/
+/***/ "./resources/react/components/shared/mock-item-service.js":
+/*!****************************************************************!*\
+  !*** ./resources/react/components/shared/mock-item-service.js ***!
+  \****************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -67315,13 +67315,13 @@ function () {
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/App.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!****************************************************************!*\
+  !*** multi ./resources/react/App.js ./resources/sass/app.scss ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/vagrant/code/breiprich_profile/resources/js/App.js */"./resources/js/App.js");
+__webpack_require__(/*! /home/vagrant/code/breiprich_profile/resources/react/App.js */"./resources/react/App.js");
 module.exports = __webpack_require__(/*! /home/vagrant/code/breiprich_profile/resources/sass/app.scss */"./resources/sass/app.scss");
 
 

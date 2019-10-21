@@ -1,9 +1,11 @@
 {
-    "/js/App.js": "/js/App.js",
+    "/js/react/App.js": "/js/react/App.js",
     "/css/app.css": "/css/app.css",
-    "/css/all_styles.css": "/css/all_styles.css",
-    "/css/cover.css": "/css/cover.css",
-    "/css/composer.css": "/css/composer.css",
-    "/css/bootstrap.css": "/css/bootstrap.css",
-    "/js/all_scripts.js": "/js/all_scripts.js"
+    "/css/bootstrap/bootstrap.css": "/css/bootstrap/bootstrap.css",
+    "/css/bootstrap/cover.css": "/css/bootstrap/cover.css",
+    "/css/bootstrap/dashboard.css": "/css/bootstrap/dashboard.css",
+    "/css/bio/composer.css": "/css/bio/composer.css",
+    "/js/bootstrap/dashboard.js": "/js/bootstrap/dashboard.js",
+    "/js/bio/composer.js": "/js/bio/composer.js",
+    "/js/vendors/AC_RunActiveContent.js": "/js/vendors/AC_RunActiveContent.js"
 }

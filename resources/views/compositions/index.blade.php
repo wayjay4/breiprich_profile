@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.dashboard.app')
 
 @section('content')
 <div class="main_content" id="create_comp_content">
-  <!--
+
   <h1>Compositions</h1>
 
   <p>
@@ -19,7 +19,7 @@
   @else
     <p>No compositions found</p>
   @endif
--->
+
 
   <div class="container">
     <div class="row">

@@ -11,20 +11,32 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.react('resources/js/App.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css')
-   .styles([
-          'resources/css/index.css'
-        ], 'public/css/all_styles.css')
-    .styles([
-           'resources/css/cover.css'
-         ], 'public/css/cover.css')
-   .styles([
-          'resources/css/composer.css'
-        ], 'public/css/composer.css')
-    .styles([
-          'node_modules/bootstrap/dist/css/bootstrap.min.css'
-        ], 'public/css/bootstrap.css')
-   .scripts([
-              'resources/js/vendors/AC_RunActiveContent.js'
-            ], 'public/js/all_scripts.js');
+mix.react('resources/react/App.js', 'public/js/react')
+  .sass('resources/sass/app.scss', 'public/css')
+
+
+
+  .styles([
+        'node_modules/bootstrap/dist/css/bootstrap.min.css'
+      ], 'public/css/bootstrap/bootstrap.css')
+  .styles([
+         'resources/css/bootstrap/cover.css'
+       ], 'public/css/bootstrap/cover.css')
+  .styles([
+        'resources/css/bootstrap/dashboard.css'
+      ], 'public/css/bootstrap/dashboard.css')
+  .styles([
+         'resources/css/bio/composer.css'
+       ], 'public/css/bio/composer.css')
+
+
+
+  .scripts([
+        'resources/js/bootstrap/dashboard.js'
+      ], 'public/js/bootstrap/dashboard.js')
+  .scripts([
+        'resources/js/bio/composer.js'
+      ], 'public/js/bio/composer.js')
+  .scripts([
+        'resources/js/vendors/AC_RunActiveContent.js'
+      ], 'public/js/vendors/AC_RunActiveContent.js');

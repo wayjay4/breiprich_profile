@@ -71,11 +71,11 @@ a.textlink:active {
 /* home page--------------------------------*/
 
 #home_content {
-	background-image: url(../images/gathered_photos/brucer_background.jpg);
+	background-image: url(../../images/gathered_photos/brucer_background.jpg);
 }
 
 #home_flashplayer {
-  background-image: url(../images/gathered_photos/brucer.jpg);
+  background-image: url(../../images/gathered_photos/brucer.jpg);
   background-repeat: no-repeat;
   background-position: right top;
 	height: inherit;
@@ -90,7 +90,7 @@ a.textlink:active {
 /* biography page---------------------------*/
 
 #bio_content {
-	background-image: url(../images/gathered_photos/IMG_0488.jpg);
+	background-image: url(../../images/gathered_photos/IMG_0488.jpg);
   height: 576px;
 }
 
@@ -167,7 +167,7 @@ div.bioItem {
 /* recording page---------------------------*/
 
 #rec_content {
-	background-image: url(../images/gathered_photos/08.jpg);
+	background-image: url(../../images/gathered_photos/08.jpg);
   height: 576px;
 }
 
@@ -253,7 +253,7 @@ span.text3 {
 /* compositions page------------------------*/
 
 #comp_content {
-	background-image: url(../images/gathered_photos/01_1-no_text.jpg);
+	background-image: url(../../images/gathered_photos/01_1-no_text.jpg);
 	height: 576px;
 }
 
@@ -390,7 +390,7 @@ div#comp_media_player span#track_name {
 /* audio page-------------------------------*/
 
 #audio_content {
-	background-image: url(../images/gathered_photos/09.jpg);
+	background-image: url(../../images/gathered_photos/09.jpg);
 	height: 576px;
 }
 
@@ -486,7 +486,7 @@ tbody {
 /* reviews page-----------------------------*/
 
 #rev_content {
-	background-image: url(../images/brins_mesa2_edit.png);
+	background-image: url(../../images/brins_mesa2_edit.png);
 	height: 576px;
 }
 
@@ -548,7 +548,7 @@ tbody {
 /* contact page-----------------------------*/
 
 #contact_content {
-	background-image: url(../images/gathered_photos/03.jpg);
+	background-image: url(../../images/gathered_photos/03.jpg);
   height: 576px;
 }
 
