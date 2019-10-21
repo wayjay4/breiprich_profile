@@ -10,22 +10,11 @@
   <title>{{ config('app.name') }}</title>
 
   <!-- Styles -->
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link href="{{ asset('css/bootstrap/bootstrap.css') }}" rel="stylesheet">
   <link href="{{ asset('css/bootstrap/cover.css') }}" rel="stylesheet">
   <link href="{{ asset('css/bio/composer.css') }}" rel="stylesheet">
-  <!--
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet" >
-  -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-  <style type="text/css">
-    #spinner {
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform: translate(-50%, -50%);
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" >
 
   <!-- Scripts -->
   <script src="{{ asset('js/vendors/AC_RunActiveContent.js') }}"></script>
