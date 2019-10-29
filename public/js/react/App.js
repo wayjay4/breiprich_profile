@@ -67029,7 +67029,7 @@ function (_Component) {
             marginLeft: '20px'
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, "Created on ", comp.created_at)));
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "User value: ", this.state.user.name)));
+      })));
     }
   }, {
     key: "apiRouter",

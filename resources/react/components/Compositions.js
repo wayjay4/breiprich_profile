@@ -67,10 +67,6 @@ class Compositions extends Component {
         }
         </div>
 
-        <div>
-          <p>User value: {this.state.user.name}</p>
-        </div>
-
         {/* <div>
           <p>Token value: {this.state.token}</p>
         </div> */}

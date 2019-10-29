@@ -56,7 +56,7 @@
         <div class="sidebar-sticky" style="padding-top:35px;">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" href="#">
+              <a class="nav-link active" href="{{route('dashboard', [])}}">
                 <span data-feather="home"></span>
                 Dashboard <span class="sr-only">(current)</span>
               </a>
@@ -130,7 +130,7 @@
 
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"  style="padding-top:70px;">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Dashboard</h1>
+          <h1 class="h2">@yield('header')</h1>
           <div hidden class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group mr-2">
               <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
