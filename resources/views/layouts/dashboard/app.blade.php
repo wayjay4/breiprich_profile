@@ -62,9 +62,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="{{route('comps.index', [])}}">
                 <span data-feather="file"></span>
-                Orders
+                Compositions
               </a>
             </li>
             <li class="nav-item">
@@ -147,8 +147,6 @@
       </main>
     </div>
   </div>
-
-
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
