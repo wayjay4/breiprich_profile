@@ -1,4 +1,6 @@
-@extends('layouts.composer.app')
+@extends('layouts.dashboard.app')
+
+@section('header') AudioTrack Details @endsection
 
 @section('content')
 <div class="main_content" id="create_comp_content">
