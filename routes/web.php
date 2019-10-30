@@ -35,18 +35,24 @@ Route::get('/api_test', function(){
 
 // Begin: dashboard routes
 
-Route::resource('comps', 'Composer\CompositionsController');
+Auth::routes(['verify'=>true]);
 
-Route::resource('comps/{comp}/atracks', 'Composer\AudiotracksController');
+Route::resource('comps', 'Composer\CompositionsController')
+->middleware('verified');
+
+Route::resource('comps/{comp}/atracks', 'Composer\AudiotracksController')
+->middleware('verified');
 
 Route::resource('atracks/{track}/adetails', 'Composer\AudiodetailsController')
 ->except([
   'index', 'show'
-]);
+])
+->middleware('verified');
 
-
-Auth::routes(['verify'=>true]);
+Route::get('/atracks', 'Composer\AudiotracksController@index')
+->middleware('verified')
+->name('atracks');
 
 Route::get('/dashboard', 'DashboardController@index')
-->name('dashboard')
-->middleware('verified');
+->middleware('verified')
+->name('dashboard');

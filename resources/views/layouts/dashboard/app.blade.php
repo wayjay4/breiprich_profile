@@ -22,10 +22,10 @@
 <body>
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm fixed-top">
     <i class="material-icons">account_balance_wallet</i>
-    <h5 class="my-0 mr-md-auto font-weight-normal">{{ config('app.name') }}</h5>
+    <!-- <h5 class="my-0 mr-md-auto font-weight-normal">{{ config('app.name') }}</h5> -->
+    <h5 class="my-0 mr-md-auto font-weight-normal">MyPilotStore.com</h5>
 
     <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-dark" href="#">My Account</a>
       <a class="p-2 text-dark" href="#">Settings</a>
       <a class="p-2 text-dark" href="#">Support</a>
     </nav>
@@ -36,15 +36,19 @@
       </a>
 
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{ route('logout') }}"
-             onclick="event.preventDefault();
-                           document.getElementById('logout-form').submit();">
-              {{ __('Logout') }}
-          </a>
+        <a class="dropdown-item" href="#">
+            My Account
+        </a>
 
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>
-              @csrf
-          </form>
+        <a class="dropdown-item" href="{{ route('logout') }}"
+           onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>
+            @csrf
+        </form>
       </div>
     </div>
   </div>
@@ -63,29 +67,29 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('comps.index', [])}}">
-                <span data-feather="file"></span>
+                <span data-feather="book-open"></span>
                 Compositions
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="shopping-cart"></span>
-                Products
+              <a class="nav-link" href="{{route('atracks', [])}}">
+                <span data-feather="headphones"></span>
+                AudioTracks
               </a>
             </li>
-            <li class="nav-item">
+            <li hidden class="nav-item">
               <a class="nav-link" href="#">
                 <span data-feather="users"></span>
                 Customers
               </a>
             </li>
-            <li class="nav-item">
+            <li hidden class="nav-item">
               <a class="nav-link" href="#">
                 <span data-feather="bar-chart-2"></span>
                 Reports
               </a>
             </li>
-            <li class="nav-item">
+            <li hidden class="nav-item">
               <a class="nav-link" href="#">
                 <span data-feather="layers"></span>
                 Integrations
@@ -94,12 +98,12 @@
           </ul>
 
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Saved reports</span>
+            <span hidden>Saved reports</span>
             <a class="d-flex align-items-center text-muted" href="#">
-              <span data-feather="plus-circle"></span>
+              <span hidden data-feather="plus-circle"></span>
             </a>
           </h6>
-          <ul class="nav flex-column mb-2">
+          <ul hidden class="nav flex-column mb-2">
             <li class="nav-item">
               <a class="nav-link" href="#">
                 <span data-feather="file-text"></span>

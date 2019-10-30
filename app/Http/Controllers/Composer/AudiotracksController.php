@@ -17,12 +17,11 @@ class AudiotracksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($compID)
+    public function index()
     {
       $tracks = AudioTrack::orderBy('id', 'asc')->get();
 
       return view('audiotracks.index')->with([
-        'compID' => $compID,
         'tracks' => $tracks
       ]);
     }
