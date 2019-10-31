@@ -1,16 +1,16 @@
 @extends('layouts.dashboard.app')
 
-@section('header') Composition - Editor @endsection
+@if($create)
+  @section('header') Composition - Creator @endsection
+@else
+  @section('header') Composition - Editor @endsection
+@endif
 
 @section('content')
 <div class="main_content" id="create_comp_content">
   @if($create)
-    <h1>Create Composition</h1>
-
     <form action="{{route('comps.store', [])}}" method="post">
   @else
-    <h1>Edit Composition</h1>
-
     <form action="{{route('comps.update', ['compID'=>$comp->id])}}" method="post">
       <input type="hidden" name="_method" value="PUT" />
   @endif

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import ItemService from './shared/mock-item-service';
+import Composition from './composition';
 
 class Compositions extends Component {
   constructor(props){
@@ -37,32 +38,22 @@ class Compositions extends Component {
     if(!comps || !user) return null;
 
     // display data for troubleshooting
-    console.log('user:'); console.dir(user);
+    //console.log('user:'); console.dir(user);
     console.log('comps:'); console.dir(comps);
 
     return (
-      <div className="CompositionsApp">
-        <h1>Items</h1>
-
+      <div className='CompositionsApp'>
         <div>
         {
           comps.map(
             comp =>
-            <p key={comp.id}>
-              <a href={'/comps/'+comp.id}>
+            <div key={comp.id} style={{marginBottom:'20px'}}>
+              {/*<a href={'/comps/'+comp.id} style={{ paddingRight:'10px' }}>
                 {comp.title}
-              </a>
-              <br />
+              </a>*/}
 
-              {/* year: {comp.year} <br />
-              instruments: {comp.instruments} <br />
-              total_movements: {comp.total_movements} <br />
-              versions: {comp.versions} <br />
-              total_time: {comp.total_time} <br />
-              music_genre_id: {comp.music_genre_id} <br /> */}
-
-              <span style={{marginLeft: '20px'}}><small>Created on {comp.created_at}</small></span>
-            </p>
+              <Composition comp={comp} />
+            </div>
           )
         }
         </div>
