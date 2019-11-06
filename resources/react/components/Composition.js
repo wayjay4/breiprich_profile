@@ -25,6 +25,12 @@ class Composition extends Component {
           {comp.title}
         </a>
 
+        <span style={{ paddingLeft:'10px' }}>
+          [
+            <a href={'/comps/'+comp.id}>Edit</a>
+          ]
+        </span>
+
         <div style={{marginLeft:'20px'}}>
           <div className="collapse" id={'collapseExample_'+comp.id}>
             <div className="card card-body">
@@ -39,6 +45,7 @@ class Composition extends Component {
                 <li className="list-group-item">created on: <small>{comp.created_at}</small></li>
                 <li className="list-group-item">updated on: <small>{comp.updated_at}</small></li>
               </ul>
+
             </div>
           </div>
         </div>

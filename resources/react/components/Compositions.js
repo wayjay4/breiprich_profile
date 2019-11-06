@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import ItemService from './shared/mock-item-service';
 import Composition from './composition';
+import LoadingMessage from './shared/LoadingMessage';
 
 class Compositions extends Component {
   constructor(props){
@@ -16,14 +17,17 @@ class Compositions extends Component {
     this.state = {
       compositions: null,
       token: null,
-      user: null
+      user: null,
+      isLoading: false
     }
-
-    this.initializeApp();
   }
 
   initializeApp(){
     var params = {};
+
+    this.setState({
+      isLoading: true
+    });
 
     this.apiRouter(function(){
       this.getUser(params);
@@ -31,36 +35,44 @@ class Compositions extends Component {
     }.bind(this));
   }
 
+  componentDidMount(){
+    this.initializeApp();
+  }
+
   render(){
     const user = this.state.user;
     const comps = this.state.compositions;
+    let compositonComponents = [];
 
-    if(!comps || !user) return null;
+    if(comps && user){
+      compositonComponents = comps.map(comp =>
+        <div key={comp.id} style={{marginBottom:'20px'}}>
+          {/*<a href={'/comps/'+comp.id} style={{ paddingRight:'10px' }}>
+            {comp.title}
+          </a>*/}
+
+          <Composition comp={comp} />
+        </div>
+      );
+    }
 
     // display data for troubleshooting
     //console.log('user:'); console.dir(user);
-    console.log('comps:'); console.dir(comps);
+    //console.log('comps:'); console.dir(comps);
 
     return (
       <div className='CompositionsApp'>
         <div>
-        {
-          comps.map(
-            comp =>
-            <div key={comp.id} style={{marginBottom:'20px'}}>
-              {/*<a href={'/comps/'+comp.id} style={{ paddingRight:'10px' }}>
-                {comp.title}
-              </a>*/}
-
-              <Composition comp={comp} />
-            </div>
-          )
-        }
+          {compositonComponents}
         </div>
 
         {/* <div>
           <p>Token value: {this.state.token}</p>
         </div> */}
+
+        {
+          this.state.isLoading && <LoadingMessage />
+        }
       </div>
     );
   }
@@ -87,7 +99,8 @@ class Compositions extends Component {
   getCompositions(params){
     this.itemService.retrieveItems(function(items){
       this.setState({
-        compositions: items
+        compositions: items,
+        isLoading: false
       });
 
       // display data for troubleshooting

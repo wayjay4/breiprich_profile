@@ -66948,6 +66948,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _shared_mock_item_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/mock-item-service */ "./resources/react/components/shared/mock-item-service.js");
 /* harmony import */ var _composition__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./composition */ "./resources/react/components/composition.js");
+/* harmony import */ var _shared_LoadingMessage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./shared/LoadingMessage */ "./resources/react/components/shared/LoadingMessage.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -66965,6 +66966,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -66991,11 +66993,9 @@ function (_Component) {
     _this.state = {
       compositions: null,
       token: null,
-      user: null
+      user: null,
+      isLoading: false
     };
-
-    _this.initializeApp();
-
     return _this;
   }
 
@@ -67003,33 +67003,45 @@ function (_Component) {
     key: "initializeApp",
     value: function initializeApp() {
       var params = {};
+      this.setState({
+        isLoading: true
+      });
       this.apiRouter(function () {
         this.getUser(params);
         this.getCompositions(params);
       }.bind(this));
     }
   }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.initializeApp();
+    }
+  }, {
     key: "render",
     value: function render() {
       var user = this.state.user;
       var comps = this.state.compositions;
-      if (!comps || !user) return null; // display data for troubleshooting
-      //console.log('user:'); console.dir(user);
+      var compositonComponents = [];
 
-      console.log('comps:');
-      console.dir(comps);
+      if (comps && user) {
+        compositonComponents = comps.map(function (comp) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            key: comp.id,
+            style: {
+              marginBottom: '20px'
+            }
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_composition__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            comp: comp
+          }));
+        });
+      } // display data for troubleshooting
+      //console.log('user:'); console.dir(user);
+      //console.log('comps:'); console.dir(comps);
+
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "CompositionsApp"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comps.map(function (comp) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          key: comp.id,
-          style: {
-            marginBottom: '20px'
-          }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_composition__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          comp: comp
-        }));
-      })));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, compositonComponents), this.state.isLoading && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shared_LoadingMessage__WEBPACK_IMPORTED_MODULE_4__["default"], null));
     }
   }, {
     key: "apiRouter",
@@ -67053,7 +67065,8 @@ function (_Component) {
     value: function getCompositions(params) {
       this.itemService.retrieveItems(function (items) {
         this.setState({
-          compositions: items
+          compositions: items,
+          isLoading: false
         }); // display data for troubleshooting
         //console.log('items:'); console.dir(items);
         //console.log('params:'); console.dir(params);
@@ -67221,7 +67234,13 @@ function (_Component) {
         role: "button",
         "aria-expanded": "false",
         "aria-controls": "collapseExample"
-      }, comp.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, comp.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          paddingLeft: '10px'
+        }
+      }, "[", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: '/comps/' + comp.id
+      }, "Edit"), "]"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
           marginLeft: '20px'
         }
@@ -67259,6 +67278,27 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Composition);
+
+/***/ }),
+
+/***/ "./resources/react/components/shared/LoadingMessage.js":
+/*!*************************************************************!*\
+  !*** ./resources/react/components/shared/LoadingMessage.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function DataLoadingMessage() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Loading data..."));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (DataLoadingMessage);
 
 /***/ }),
 
