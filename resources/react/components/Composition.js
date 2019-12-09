@@ -27,7 +27,7 @@ class Composition extends Component {
 
         <span style={{ paddingLeft:'10px' }}>
           [
-            <a href={'/comps/'+comp.id}>Edit</a>
+            <a href={'/comps/'+comp.id}>edit</a>
           ]
         </span>
 

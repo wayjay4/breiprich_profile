@@ -42,7 +42,7 @@ class Compositions extends Component {
   render(){
     const user = this.state.user;
     const comps = this.state.compositions;
-    let compositonComponents = [];
+    var compositonComponents = [];
 
     if(comps && user){
       compositonComponents = comps.map(comp =>
