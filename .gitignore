@@ -10,3 +10,11 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+# ======================================== #
+# My added ignores: Waylon Dixon           #
+# ======================================== #
+/public/images
+/public/flash_files
+/public/music
+*.DS_Store

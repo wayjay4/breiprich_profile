@@ -34,6 +34,9 @@
               <a class="nav-link" id="v-pills-item09-tab" data-toggle="pill" href="#v-pills-item09" role="tab" aria-controls="v-pills-item09" aria-selected="false">
                 Swans
               </a>
+              <a class="nav-link" id="v-pills-item10-tab" data-toggle="pill" href="#v-pills-item10" role="tab" aria-controls="v-pills-item10" aria-selected="false">
+                Beneath the Tide
+              </a>
             </div>
           </div>
         </div>
@@ -50,6 +53,7 @@
                   <ul>
                     <li>John Masserini, clarinet</li>
                     <li>Jonathan Bergeron, saxophone</li>
+                    <li><span class="text3">Centaur Records</span></li>
                   </ul>
                 </div>
               </div>
@@ -61,7 +65,7 @@
                   <ul>
                     <li>Hradec Kralove Philharmonic Orchestra</li>
                     <li>Andreas Sebastian Weiser, conductor</li>
-                    <li>CRS Master Recordings</li>
+                    <li><span class="text3">CRS Master Recordings</span></li>
                   </ul>
                 </div>
               </div>
@@ -148,6 +152,20 @@
                   <ul>
                     <li>Bowling Green Philharmonia, Emily Freeman Brown, conductor</li>
                     <li><span class="text3">The Eleventh Annual New Music and Art Festival at Bowling Green State University Radio Series</span></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="v-pills-item10" role="tabpanel" aria-labelledby="v-pills-item10-tab">
+                <div class="cdItem">
+                  <img class="cdcover" src="images/used_photos/cd_cover_beneath_the_tide.png" width="200px" height="200px">
+                  <h2>Beneath the Tide</h2>
+                  <ul>
+                    <li>Lullaby for violin and orchestra</li>
+                    <li>Goran Končar, violin</li>
+                    <li>Miran Vaupotić, conductor</li>
+                    <li>Croatian Chamber Orchestra</li>
+                    <li><span class="text3">Navona Records</span></li>
                   </ul>
                 </div>
               </div>

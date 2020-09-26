@@ -35,18 +35,18 @@
                         (<i>San Francisco Classical Voice</i>), "very powerful" (<i>All Music Guide</i>), "lovely and evocative" (<i>Guitar Review-New York</i>), "very impressive"
                         (<i>Cumhuriyet</i>-Turkey), and "of special interest" (<i>Guitar International</i>-England). With compositions that span the gamut from overt tonality and
                         metric regularity to atonality and pronounced rhythmic flexibility, he explores the beauty of lyrical lines, lush harmonies and colorful textures. Composers
-                        as diverse as Toru Takemitsu, Gy&ouml;rgy Ligeti, Luigi Nono and Samuel Barber have been particularly influential in the development of his own style.
+                        as diverse as Toru Takemitsu, Pierre Boulez, György Ligeti, Luigi Nono and Samuel Barber have been particularly influential in the development of his own style.
                     </p>
 
                     <p>
                         Much of Reiprich's music is a reflection upon images of nature found in the Turkish poetry of Oguz Tansel and in classical Chinese and Japanese poetry.
                         Recently, he has been influenced by the long sentences with spiraling subordinate clauses that Marcel Proust employed in his <i>In Search of Lost Time</i>,
-                        as well as the long, rhapsodic sentences of L&aacute;szl&oacute; Krasznahorkai, Claude Simon and Mircea Cartarescu. Ultimately, it is the serene and
+                        as well as the long, rhapsodic sentences of L&aacute;szl&oacute; Krasznahorkai, Claude Simon and Mircea Cărtărescu. Ultimately, it is the serene and
                         contemplative-the unexpected moment of self-contained and quiescent beauty in nature and art-that serve as Reiprich's inspiration.
                     </p>
 
                     <p>
-                      Bruce Reiprich has received grants from Meet the Composer and the Margaret Fairbank Jory Copying Assistance Program of the American music Center, a fellowship
+                        Bruce Reiprich has received grants from Meet the Composer and the Margaret Fairbank Jory Copying Assistance Program of the American music Center, a fellowship
                         from the Charles Ives Center for American Music and numerous grants for music composition from Northern Arizona University including the "Most Significant
                         Artistic/Creative Work" award for 2016. He was a fellow at the <a target="_blank" class="textlink" href="http://www.vcca.com">Virginia Center for the Creative Arts</a>
                         during the autumn of 2007. He is presently director of <a href="https://www.ensembleflageolet.com/" class="textlink" target="_blank">Ensemble Flageolet</a>.
@@ -55,7 +55,7 @@
                     <p>
                         His music has been heard abroad with performances in Brazil, China, Poland, Germany, Romania, Portugal, England, Turkey, and Mexico, and throughout the
                         United States in major cities such as New York, Washington, D.C., Boston, Philadelphia, Baltimore, St. Paul, Detroit, Chicago, Los Angeles, Oakland, and
-                        San Francisco, and in numerous radio broadcasts. International, national, and regional festival performances include the the Festival of New Music: Touchpoints (Portugal), Saptamana Internationala a
+                        San Francisco, and in numerous radio broadcasts. International, national, and regional festival performances include the Festival of New Music: Touchpoints (Portugal), Saptamana Internationala a
                         Muzicii Noi (Romania), Shenyang Conservatory Festival of American Music (China), Piano Spheres, Bang on a Can Summer Music Festival at Mass MoCA, the
                         International Double Reed Society Conference, the North American Saxophone Alliance National Convention, the International Contemporary Music Festival in
                         Mexico City, the Society of Composers National and Regional Conferences, the Cambridge (England) Summer Recitals, the Chiron New Music Festival (New York),
@@ -145,7 +145,7 @@
           <p>
               His music has been heard abroad with performances in Brazil, China, Poland, Germany, Romania, Portugal, England, Turkey, and Mexico, and throughout the
               United States in major cities such as New York, Washington, D.C., Boston, Philadelphia, Baltimore, St. Paul, Detroit, Chicago, Los Angeles, Oakland, and
-              San Francisco, and in numerous radio broadcasts. International, national, and regional festival performances include the the Festival of New Music: Touchpoints (Portugal), Saptamana Internationala a
+              San Francisco, and in numerous radio broadcasts. International, national, and regional festival performances include the the Festival of New Music: Touchpoints (Portugal), Săptămâna Internatională a
               Muzicii Noi (Romania), Shenyang Conservatory Festival of American Music (China), Piano Spheres, Bang on a Can Summer Music Festival at Mass MoCA, the
               International Double Reed Society Conference, the North American Saxophone Alliance National Convention, the International Contemporary Music Festival in
               Mexico City, the Society of Composers National and Regional Conferences, the Cambridge (England) Summer Recitals, the Chiron New Music Festival (New York),
@@ -156,14 +156,14 @@
           </p>
 
           <p>
-              His music has been performed by the Indiana University New Music Ensemble, Washington Square Contemporary Music Society/League ISCM Chamber Players, Oficina Música Viva (Brazil), California
-              E.A.R Unit, violinists Miranda Cuckson and Goran Koncar, Ensemble Flageolet, pianists Vicki Ray, Ana Cláudia de Assis, Mark Robson and Gary Barnett, Zeitgeist, Third Coast Percussion, the Boston Modern Orchestra Project
-              (Club Cafe Series), Composers, Inc., Ensemble Talea-Halle, The Boston New Music Initiative, Erasable Color, Grand Circle New Music, guitarist Andrzej Mokry,
-              the Mana Saxophone Quartet, Chamber Mix, the Society for New Music, the Civic Performers Innovative Music, the Soundings Percussion Duo, the Caulkins Duo,
-              the Larson-Taylor-Allvin Trio, the Kithara Guitar Trio, the DaPonte String Quartet, the Lyric Consort, the Gregg Smith Singers, the Hradec Kralove
-              Philharmonic Orchestra (Czech Republic), the Flagstaff Symphony Orchestra, the Pro Musica Chamber Orchestra of Columbus, the Ives Chamber Orchestra,
-              the Bowling Green Philharmonia, the Singers' Guild of Scranton, the Wyoming Valley Oratorio Society, the Performing Arts Institute Symphony Orchestra,
-              the Oakland Civic Orchestra, the Albuquerque Youth Symphony, the Knox-Galesburg Symphony and the Croatian Chamber Orchestra.
+            His music has been performed by violinists Miranda Cuckson and Goran Končar, pianists Vicki Ray, Ana Cláudia de Assis, Stephen Gosling, Mark Robson and Gary
+            Barnett, guitarist Andrzej Mokry, Albuquerque Youth Symphony Orchestra, Boston Modern Orchestra Project (Club Cafe Series),Boston New Music Initiative, Bowling
+            Green Philharmonia, California E.A.R Unit, Caulkins Guitar Duo, Chamber Mix, Civic Performers Innovative Music, Composers, Inc., Croatian Chamber Orchestra, DaPonte
+            String Quartet, Duo Sigma, Ensemble Flageolet, Ensemble Talea-Halle,Erasable Color, Flagstaff Symphony Orchestra, Grand Circle New Music, Gregg Smith Singers, Hartt
+            Contemporary Players Ensemble, Hradec Kralove Philharmonic Orchestra (Czech Republic), Indiana University New Music Ensemble, Ives Chamber Orchestra, Kithara Guitar
+            Trio, Knox-Galesburg Symphony, Larson-Taylor-Allvin Trio, Lyric Consort, Mana Saxophone Quartet, Oakland Civic Orchestra, Oficina Música Viva (Brazil), Performing Arts
+            Institute Symphony Orchestra, Pro Musica Chamber Orchestra of Columbus, Singers Guild of Scranton, Society for New Music, Soundings Percussion Duo, Third Coast Percussion,
+            Washington Square Contemporary Music Society/League ISCM Chamber Players, Wyoming Valley Oratorio Society,and Zeitgeist, among others.
           </p>
 
           <p>

@@ -4,6 +4,69 @@
   <div class="main_content" id="rev_content">
     <div id="rev_textArea">
         <div id="rev_textBox">
+          <h1><em>Lullaby</em> for violin and orchestra</h1>
+
+          <div>
+            <p class="reviewcomment">
+              &quot;At six minutes, Bruce Reiprich's harmonically lush <i>Lullaby</i> is the recording's shortest setting, but its brevity makes it no less affecting, especially when
+              Goran Koncar's the violinist involved. Composed in 2002 to celebrate the birth of a friend's child, the piece is suitably lyrical, with the composer evoking
+              the wonder of new birth in the writing's uplifting spirit and stirring coda. All five of the recording's dynamic works have much to recommend them on formal
+              grounds, but it's their emotional effects, so powerfully instantiated by Reiprich's piece, that register as memorably.&quot;
+            </p>
+            <p class="revieweditor">
+              TEXTURA
+            </p>
+          </div>
+
+          <div>
+            <p class="reviewcomment">
+              &quot;Bruce Reiprich's 'Lullaby', written upon the birth of a friend’s child, is a harmonically lush composition for violin solo and orchestra. Tender and sentimental,
+              the piece reflects on the wonder of new life and the love that comes as people gather to help a child grow.&quot;
+            </p>
+            <p class="reviewcomment">
+              &quot;Navona Records deliver a wonderfully balanced compilation album. These five compositions offer up incredibly deep and multilayered works which flow naturally together.
+              It's hard to single out highlights, but Bruce Reiprich’s 'Lullaby' really stuck with me.&quot;
+            </p>
+            <p class="revieweditor">
+              Darren Rea(Review Graveyard)
+            </p>
+          </div>
+
+          <div>
+            <p class="reviewcomment">
+              &quot;Bruce Reiprich’s brief <i>Lullaby</i> (2002/2018) was written to celebrate the birth of a friend’s son. It is a lush and romantic work beautifully performed
+              here by Goran Končar in what would make for a really gorgeous encore number.&quot;
+            </p>
+            <p class="revieweditor">
+              Cinemusical
+            </p>
+          </div>
+
+
+          <div>
+            <p class="reviewcomment">
+              &quot;<i>Lullaby</i> by Bruce Reiprich celebrates the birth of a child—the new son of a violinist friend. Hence the violin is the solo instrument here. It reflects
+              tenderness, joy and wonder, after a brief but weighty introduction. Goran Končar, the soloist on this recording, has a lovely warm and sympathetic sound which
+              portrays this superbly.&quot;
+            </p>
+            <p class="revieweditor">
+              Geoff Pearce(Classical Music Daily)
+            </p>
+          </div>
+
+          <h1><em>A Necklace of Dew</em> for alto saxophone, clarinet and live electronics</h1>
+
+          <div>
+            <p class="reviewcomment">
+              &quot;Written for John Masserini and Jonathan Bergeron, Bruce Reiprich’s <i>A Necklace of Dew</i> employs effects pedals to generate hip distorted sounds, allowing
+              the duo to create thicker textures and to reach outside of their previous sound palate. The gestural figures combine to play the two off of each other, and
+              the pedals to build large stacked harmony behind the oscillating lines, juxtaposing this against the distorted sounds. The variety and grittiness of this track
+              compared to the previous tracks allows the album as a whole to open up again.&quot;
+            </p>
+            <p class="revieweditor">
+              Ford Fourqueran (International Clarinet Association)
+            </p>
+          </div>
 
           <h1><em>Flowing Waters Caresss Fallen Petal</em> for piano</h1>
 
